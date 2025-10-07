@@ -20,10 +20,12 @@ import org.joml.Vector3f;
 
 @EventBusSubscriber
 public class SectumsempraSE extends SpecialEffect {
-    private static final Vector3f COLOR_WHITE = new Vector3f(1f, 1f, 1f);
-    private static final Vector3f COLOR_GREY = new Vector3f(0.25f, 0.25f, 0.25f);
-    private static final DustParticleOptions PARTICLE_WHITE = new DustParticleOptions(COLOR_WHITE, 0.35F);
-    private static final DustParticleOptions PARTICLE_GREY = new DustParticleOptions(COLOR_GREY, 0.5F);
+    public static final Vector3f COLOR_WHITE = new Vector3f(1f, 1f, 1f);
+    public static final Vector3f COLOR_GREY = new Vector3f(0.25f, 0.25f, 0.25f);
+    public static final DustParticleOptions PARTICLE_WHITE = new DustParticleOptions(COLOR_WHITE, 0.35F);
+    public static final DustParticleOptions PARTICLE_GREY = new DustParticleOptions(COLOR_GREY, 0.5F);
+
+    public static final String SECTUMSEMPRA_BOOSTED = "last_smith.ss.boosted";
 
     public SectumsempraSE(int requestLevel, boolean isCopiable, boolean isRemovable) {
         super(requestLevel, isCopiable, isRemovable);
@@ -55,15 +57,18 @@ public class SectumsempraSE extends SpecialEffect {
         drawParticleCurve(serverLevel, startPos, endPos, PARTICLE_WHITE, 96);
         drawParticleCurve(serverLevel, startPos, endPos, PARTICLE_GREY, 64);
 
-        summonedSword.setDamage(summonedSword.getDamage() + 1.0f);
-        if (target instanceof LivingEntity living) {
-            float extraDamage1 = living.getHealth() * 0.04f + 1f;
-            living.invulnerableTime = 0;
-            living.hurt(player.damageSources().indirectMagic(summonedSword, player), extraDamage1);
+        if (!summonedSword.getPersistentData().contains(SECTUMSEMPRA_BOOSTED)){
+            summonedSword.getPersistentData().putBoolean(SECTUMSEMPRA_BOOSTED, true);
+            summonedSword.setDamage(summonedSword.getDamage() + 1.0f);
+            if (target instanceof LivingEntity living) {
+                float extraDamage1 = living.getHealth() * 0.04f + 1f;
+                living.invulnerableTime = 0;
+                living.hurt(player.damageSources().indirectMagic(summonedSword, player), extraDamage1);
 
-            float extraDamage2 = 1f;
-            living.invulnerableTime = 0;
-            living.hurt(player.damageSources().indirectMagic(summonedSword, player), extraDamage2);
+                float extraDamage2 = 1f;
+                living.invulnerableTime = 0;
+                living.hurt(player.damageSources().indirectMagic(summonedSword, player), extraDamage2);
+            }
         }
 
         return true;
