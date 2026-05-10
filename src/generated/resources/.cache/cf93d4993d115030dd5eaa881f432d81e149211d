@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-10T16:57:22.6110314	TLS SlashBlade Definition Registry
+// 1.20.1	2026-02-02T12:53:37.0990471	TLS SlashBlade Definition Registry
 50cd1aa99d4d187756b21b17ae6202cb7ce9dbe4 data/last_smith/slashblade/named_blades/amagumo_kaze.json
 865c36f4814202c6875b0fb553acccbc1e0eb9dc data/last_smith/slashblade/named_blades/amagumo_kumo.json
 c7f9ed0dd925537b369fc96bf68da4bc6ddf2224 data/last_smith/slashblade/named_blades/amagumo_munin.json
@@ -28,6 +28,10 @@ cc6f05a81b5b40ff5889ed792d6a843b7213ba84 data/last_smith/slashblade/named_blades
 086dac0ebf6f66da818f5100016a56812df9c3b0 data/last_smith/slashblade/named_blades/silverbamboo_top.json
 78b3de8c0e8a254a98a9ecdb9b77930f6865e5d7 data/last_smith/slashblade/named_blades/slashblade.json
 25caa8c212c5de39da3a3b60f56c6413ab23163e data/last_smith/slashblade/named_blades/sweapon.json
+4167683d0c3b49b663df342726b448a1143dab35 data/last_smith/slashblade/named_blades/uma_cafe.json
+6be1a6de9fd84afd1f11f94bb976bfc52f049b42 data/last_smith/slashblade/named_blades/uma_digital.json
+191419f90b41893d345c624c814cb9c27c8ed211 data/last_smith/slashblade/named_blades/uma_rice_shower.json
+bfa9928bcc0ea509e43bbfa7711b5967ee33ca05 data/last_smith/slashblade/named_blades/uma_tachyon.json
 8f6ea9abbc230c4194449559ef4ce40c4e2c828b data/last_smith/slashblade/named_blades/yamato_neo.json
 4bf7546f83665fe364235f79f0d7fb7156bb961e data/slashblade_addon/slashblade/named_blades/crimsoncherry.json
 08cd75ab94b8fd51b0e60c66fe7a49fff24af810 data/slashblade_addon/slashblade/named_blades/nihilbx.json

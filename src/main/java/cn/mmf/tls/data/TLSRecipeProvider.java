@@ -1,6 +1,8 @@
 package cn.mmf.tls.data;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
@@ -43,6 +45,9 @@ import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.tracen.umapyoi.data.builtin.UmaDataRegistry;
+import net.tracen.umapyoi.recipe.RequestUma;
+import net.tracen.umapyoi.recipe.UmasoulIngredient;
 
 public class TLSRecipeProvider extends AbstractRecipeProvider {
 
@@ -569,6 +574,84 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
 				SlashBladeIngredient.of(RequestDefinition.Builder.newInstance()
 						.name(SlashBladeBuiltInRegistry.MURAMASA.location()).killCount(1500).proudSoul(5000).refineCount(20).build()))
 		.unlockedBy(getHasName(SBItems.slashblade), has(SBItems.slashblade)).save(consumer);
+		
+		whenModLoaded(SlashBladeSmithingRecipeBuilder.smithing(
+				Ingredient.of(ItemRegistry.SCROLL_NAMED.get()), 
+				SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                        .name(TLSSlashBladeRegistry.NAGASADA.location())
+                        .refineCount(10)
+                        .build()), 
+				UmasoulIngredient.of(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get(), 
+						new RequestUma(Optional.empty(), Optional.of(UmaDataRegistry.RICE_SHOWER.location()), new ArrayList<>())), 
+				RecipeCategory.COMBAT, 
+				TLSSlashBladeRegistry.UMA_RICE_SHOWER.location())
+		.unlocks(getHasName(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get()), 
+				has(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get())), 
+		"blades_derby", TheLastSmith.prefix("uma_rice_shower"))
+		.build(consumer, TheLastSmith.prefix("uma_rice_shower"));
+		
+		whenModLoaded(SlashBladeSmithingRecipeBuilder.smithing(
+				Ingredient.of(ItemRegistry.SCROLL_NAMED.get()), 
+				SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                        .name(TLSSlashBladeRegistry.NAGASADA.location())
+                        .refineCount(10)
+                        .build()), 
+				UmasoulIngredient.of(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get(), 
+						new RequestUma(Optional.empty(), Optional.of(UmaDataRegistry.MANHATTAN_CAFE.location()), new ArrayList<>())), 
+				RecipeCategory.COMBAT, 
+				TLSSlashBladeRegistry.UMA_CAFE.location())
+		.unlocks(getHasName(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get()), 
+				has(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get())), 
+		"blades_derby", TheLastSmith.prefix("uma_cafe"))
+		.build(consumer, TheLastSmith.prefix("uma_cafe"));
+		
+		whenModLoaded(SlashBladeSmithingRecipeBuilder.smithing(
+				Ingredient.of(ItemRegistry.SCROLL_NAMED.get()), 
+				SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                        .name(TLSSlashBladeRegistry.NAGASADA.location())
+                        .refineCount(10)
+                        .build()), 
+				UmasoulIngredient.of(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get(), 
+						new RequestUma(Optional.empty(), Optional.of(UmaDataRegistry.AGNES_DIGITAL.location()), new ArrayList<>())), 
+				RecipeCategory.COMBAT, 
+				TLSSlashBladeRegistry.UMA_DIGITAL.location())
+		.unlocks(getHasName(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get()), 
+				has(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get())), 
+		"blades_derby", TheLastSmith.prefix("uma_digital"))
+		.build(consumer, TheLastSmith.prefix("uma_digital"));
+		
+		whenModLoaded(SlashBladeSmithingRecipeBuilder.smithing(
+				Ingredient.of(ItemRegistry.SCROLL_NAMED.get()), 
+				SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                        .name(TLSSlashBladeRegistry.AMAGUMO_MUNIN.location())
+                        .build()), 
+				UmasoulIngredient.of(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get(), 
+						new RequestUma(Optional.empty(), Optional.of(UmaDataRegistry.AGNUS_TACHYON.location()), new ArrayList<>())), 
+				RecipeCategory.COMBAT, 
+				TLSSlashBladeRegistry.UMA_TACHYON.location())
+		.unlocks(getHasName(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get()), 
+				has(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get())), 
+		"blades_derby", TheLastSmith.prefix("uma_tachyon"))
+		.build(consumer, TheLastSmith.prefix("uma_tachyon"));
+		
+		whenModLoaded(SlashBladeSmithingRecipeBuilder.smithing(
+				Ingredient.of(ItemRegistry.SCROLL_NAMED.get()), 
+				SlashBladeIngredient.of(
+                        RequestDefinition.Builder.newInstance()
+                        .name(TLSSlashBladeRegistry.UMA_TACHYON.location())
+                        .build()), 
+				UmasoulIngredient.of(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get(), 
+						new RequestUma(Optional.empty(), Optional.of(UmaDataRegistry.SYAMEIMARU_ZHENG.location()), new ArrayList<>())), 
+				RecipeCategory.COMBAT, 
+				TLSSlashBladeRegistry.AMAGUMO_MUNIN.location())
+		.unlocks(getHasName(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get()), 
+				has(net.tracen.umapyoi.item.ItemRegistry.UMA_SOUL.get())), 
+		"blades_derby", TheLastSmith.prefix("munin_from_tachyon"))
+		.build(consumer, TheLastSmith.prefix("munin_from_tachyon"));
 	}
 
     private static ResourceLocation getEnchantmentID(Enchantment enchantment) {

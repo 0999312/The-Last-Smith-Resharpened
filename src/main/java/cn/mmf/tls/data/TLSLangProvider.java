@@ -150,6 +150,11 @@ public class TLSLangProvider extends AbstractLangProvider {
 		addSlashBlade(TLSSlashBladeRegistry.SWEAPON, "SWeapon--");
 		addSlashBlade(TLSSlashBladeRegistry.SLASHBLADE, "SlashBlade--");
 		addSlashBlade(TLSSlashBladeRegistry.EIEVUI, "-Eievui-");
+		
+		addSlashBlade(TLSSlashBladeRegistry.UMA_TACHYON, "Tachyon -Lightless-");
+		addSlashBlade(TLSSlashBladeRegistry.UMA_DIGITAL, "Digital -Superstan-");
+		addSlashBlade(TLSSlashBladeRegistry.UMA_RICE_SHOWER, "Rice -Chaser-");
+		addSlashBlade(TLSSlashBladeRegistry.UMA_CAFE, "Cafe -Black Skyscraper-");
 
 		add("slash_art.last_smith.transmigration_slash", "Transmigration Slash");
 		add("slash_art.last_smith.fushigiri", "Mortal Draw");

@@ -24,6 +24,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.tracen.blades_derby.se.SpecialEffectRegistry;
 
 public class TLSSlashBladeRegistry {
     public static final ResourceKey<SlashBladeDefinition> ROUKANKEN = register("roukanken");
@@ -73,6 +74,11 @@ public class TLSSlashBladeRegistry {
     public static final ResourceKey<SlashBladeDefinition> NIHILBX = registerSJAP("nihilbx");
     public static final ResourceKey<SlashBladeDefinition> NIHILUL = registerSJAP("nihilul");
     public static final ResourceKey<SlashBladeDefinition> CRIMSONCHERRY = registerSJAP("crimsoncherry");
+    
+    public static final ResourceKey<SlashBladeDefinition> UMA_TACHYON = register("uma_tachyon");
+    public static final ResourceKey<SlashBladeDefinition> UMA_DIGITAL = register("uma_digital");
+    public static final ResourceKey<SlashBladeDefinition> UMA_CAFE = register("uma_cafe");
+    public static final ResourceKey<SlashBladeDefinition> UMA_RICE_SHOWER = register("uma_rice_shower");
     
     public static void registerAll(BootstapContext<SlashBladeDefinition> bootstrap) {
     	
@@ -431,6 +437,90 @@ public class TLSSlashBladeRegistry {
                         		),
                         TheLastSmith.prefix("slashblade")
                         ));
+    	
+    	bootstrap.register(UMA_TACHYON,
+                new SlashBladeDefinition(TheLastSmith.prefix("uma_tachyon"),
+                        RenderDefinition.Builder
+                                .newInstance()
+                                //.effectColor(0xff1111)
+                                .textureName(TheLastSmith.prefix("model/named/uma/tachyon_blade.png"))
+                                .modelName(TheLastSmith.prefix("model/named/smith/model.obj")).build(),
+                        PropertiesDefinition.Builder.newInstance()
+                        .baseAttackModifier(17.0F).maxDamage(100)
+                        .addSpecialEffect(TLSSpecialEffectRegistry.EXTREME_SHARPNESS.getId())
+                        .addSpecialEffect(TLSSpecialEffectRegistry.BEWITCHED_POWER.getId())
+                        .addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_SMITE.getId())
+                        .addSpecialEffect(SpecialEffectRegistry.UMA_SPECIAL.getId())
+                        .defaultSwordType(List.of(SwordType.BEWITCHED))
+                        .slashArtsType(SlashArtsRegistry.VOID_SLASH.getId())
+                        .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 5),
+                        		new EnchantmentDefinition(getEnchantmentID(Enchantments.SOUL_SPEED), 2),
+                        		new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 5),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.FALL_PROTECTION), 4),
+                                new EnchantmentDefinition(getEnchantmentID(Enchantments.SWEEPING_EDGE), 3)
+                        		),
+                        TheLastSmith.prefix("slashblade")
+                        ));
+    	
+    	bootstrap.register(UMA_RICE_SHOWER,
+                new SlashBladeDefinition(TheLastSmith.prefix("uma_rice_shower"),
+                        RenderDefinition.Builder
+                                .newInstance()
+                                //.effectColor(0xffb7c5)
+                                .textureName(TheLastSmith.prefix("model/named/uma/rice_shower_blade.png"))
+                                .modelName(TheLastSmith.prefix("model/named/smith/model.obj"))
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                        .baseAttackModifier(5.0F).maxDamage(70)
+                        .addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_POWER.getId())
+                        .addSpecialEffect(SpecialEffectRegistry.UMA_SPECIAL.getId())
+                        .defaultSwordType(List.of(SwordType.BEWITCHED))
+                        .slashArtsType(TLSSlashArtsRegistry.SAKURA_BLISTERING_SWORDS.getId())
+                        .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 2)),
+                        TheLastSmith.prefix("slashblade")
+                        ));
+    	
+    	bootstrap.register(UMA_DIGITAL,
+                new SlashBladeDefinition(TheLastSmith.prefix("uma_digital"),
+                        RenderDefinition.Builder
+                                .newInstance()
+                                .effectColor(0xffb7c5)
+                                .textureName(TheLastSmith.prefix("model/named/uma/digital_blade.png"))
+                                .modelName(SlashBlade.prefix("model/named/sange/sange.obj"))
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                        .baseAttackModifier(5.0F).maxDamage(70)
+                        .addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_SHARPNESS.getId())
+                        .addSpecialEffect(SpecialEffectRegistry.UMA_SPECIAL.getId())
+                        .defaultSwordType(List.of(SwordType.BEWITCHED))
+                        .slashArtsType(TLSSlashArtsRegistry.SAKURA_BLISTERING_SWORDS.getId())
+                        .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SHARPNESS), 2)),
+                        TheLastSmith.prefix("slashblade")
+                        ));
+    	
+    	bootstrap.register(UMA_CAFE,
+                new SlashBladeDefinition(TheLastSmith.prefix("uma_cafe"),
+                        RenderDefinition.Builder
+                                .newInstance()
+                                //.effectColor(0xffb7c5)
+                                .textureName(TheLastSmith.prefix("model/named/uma/cafe_blade.png"))
+                                .modelName(SlashBlade.prefix("model/named/muramasa/muramasa.obj"))
+                                .build(),
+                        PropertiesDefinition.Builder.newInstance()
+                        .baseAttackModifier(5.0F).maxDamage(70)
+                        .addSpecialEffect(TLSSpecialEffectRegistry.SMITE_SE.getId())
+                        .addSpecialEffect(SpecialEffectRegistry.UMA_SPECIAL.getId())
+                        .defaultSwordType(List.of(SwordType.BEWITCHED))
+                        .slashArtsType(TLSSlashArtsRegistry.SAKURA_BLISTERING_SWORDS.getId())
+                        .build(),
+                        List.of(new EnchantmentDefinition(getEnchantmentID(Enchantments.SMITE), 2)),
+                        TheLastSmith.prefix("slashblade")
+                        ));
+    	
     	bootstrap.register(EXORCISM_SAKURA,
                 new SlashBladeDefinition(TheLastSmith.prefix("exorcism_sakura"),
                         RenderDefinition.Builder

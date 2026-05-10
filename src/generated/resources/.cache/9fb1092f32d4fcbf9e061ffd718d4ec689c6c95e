@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-10T16:50:50.9658493	Recipes
+// 1.20.1	2026-02-02T12:53:37.0960138	Recipes
 1ac2c260eeab9d635ca7ab7699183ffef2749be8 data/last_smith/advancements/recipes/combat/amagumo_kaze.json
 0df802702edfd2032d14e802cc562e114c644a3c data/last_smith/advancements/recipes/combat/amagumo_kumo.json
 b61ba079907d2f60ee99ebad8ea0395195e80544 data/last_smith/advancements/recipes/combat/amagumo_munin.json
@@ -114,6 +114,7 @@ d37002b494cc6eab4acca089e9aaad2a8d40f1ee data/last_smith/recipes/kataware_exorci
 bbf3f73b8d03ae80753bf9f6f58ab1d10ba25198 data/last_smith/recipes/kataware_exorcism_sakura.json
 c7003a266b4a43f42cb937569b81aa79a42edf08 data/last_smith/recipes/kataware_exorcism_yuki.json
 d1bd7072cc41038ec228a4ba9391de7257d27afb data/last_smith/recipes/kusabimaru.json
+93ce2fc35fd6198cfdf426f2d5fa2b8fcf0c0830 data/last_smith/recipes/munin_from_tachyon.json
 d173673189e97ae92788faf5ca077b79c50ac6bb data/last_smith/recipes/muramasa_chizuki.json
 f42e7fc525dd8bdba802a6b9f2f638733f6f8b38 data/last_smith/recipes/muramasa_kagura.json
 d94fed95ac11b76d8664ef9b5f9f42458eb7666d data/last_smith/recipes/nagasada.json
@@ -179,6 +180,10 @@ f398fecb5582ac43c0519702e9a6e7f576ac7669 data/last_smith/recipes/sakura_steel.js
 0ea721236f220a5da7767c4734714983cc6deab4 data/last_smith/recipes/silverbamboo_top.json
 c563e1f5bc183d7dccae009d9bdb471244eaea8d data/last_smith/recipes/slashblade_from_bamboolight.json
 8eb96b0358cc345aea86a4df7ba8b658e6f9c961 data/last_smith/recipes/sweapon.json
+b610ddf93a803a79b21b6767b34de9d635977615 data/last_smith/recipes/uma_cafe.json
+e9aa3c892c400143f4596b1500dc4d833fb48106 data/last_smith/recipes/uma_digital.json
+0841657592cf45bae78d7e8d0f8588cc6a1d8a93 data/last_smith/recipes/uma_rice_shower.json
+cd6e096ae6805a85bfcde832bc6092c1ed9f12e2 data/last_smith/recipes/uma_tachyon.json
 b5ad58a9f73a2d3a19664b283d79a2360a1ffe63 data/last_smith/recipes/yakibatsuchi.json
 c3ed6a06f24bfe4f204b9f1720cb8a1158166e5a data/last_smith/recipes/yamato_full.json
 230e80ecd8d6792768cc978dfa95830f732877e4 data/minecraft/advancements/recipes/combat/blade_sakura_unfinished_3_from_blasting_blade_sakura_unfinished_2.json

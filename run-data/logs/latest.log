@@ -1,49 +1,49 @@
-[109月2025 16:57:15.268] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\mr099\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.1, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, last_smith, --all, --output, D:\minecraft_1201_modding\The-Last-Smith-Resharpened\src\generated\resources, --existing, D:\minecraft_1201_modding\The-Last-Smith-Resharpened\src\main\resources]
-[109月2025 16:57:15.274] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.11 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[109月2025 16:57:15.383] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[109月2025 16:57:15.416] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/mr099/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[109月2025 16:57:15.664] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\mr099\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.1\b9fa98d5c9fa107169a3390a1c8993d2134fbf54\javafmllanguage-1.20.1-47.3.1.jar is missing mods.toml file
-[109月2025 16:57:15.669] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\mr099\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.1\aaa252b4d4c34d0c02e647d7a2ef3df3bc11d73a\lowcodelanguage-1.20.1-47.3.1.jar is missing mods.toml file
-[109月2025 16:57:15.672] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\mr099\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.1\1722b26446496b5e686cdf124342e8f7fd33dc91\mclanguage-1.20.1-47.3.1.jar is missing mods.toml file
-[109月2025 16:57:15.674] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\mr099\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.1\4ed2bfe4ae3a6c27f587d45f58d648db68d19c00\fmlcore-1.20.1-47.3.1.jar is missing mods.toml file
-[109月2025 16:57:15.796] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[109月2025 16:57:16.926] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[109月2025 16:57:16.939] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\mr099\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, last_smith, --all, --output, D:\minecraft_1201_modding\The-Last-Smith-Resharpened\src\generated\resources, --existing, D:\minecraft_1201_modding\The-Last-Smith-Resharpened\src\main\resources]
-[109月2025 16:57:17.278] [main/INFO] [mixin/]: Remapping refMap emi-xplat-refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.280] [main/INFO] [mixin/]: Remapping refMap mixins.mmlib.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.283] [main/INFO] [mixin/]: Remapping refMap player-animation-lib-minecraft_common-refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.283] [main/INFO] [mixin/]: Remapping refMap slashblade.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.286] [main/INFO] [mixin/]: Remapping refMap slashblade.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.288] [main/INFO] [mixin/]: Remapping refMap slashblade.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.292] [main/INFO] [mixin/]: Remapping refMap slashblade.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.293] [main/WARN] [mixin/]: Reference map 'energyblade.refmap.json' for energyblade.mixins.json could not be read. If this is a development environment you can ignore this message
-[109月2025 16:57:17.293] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.293] [main/INFO] [mixin/]: Remapping refMap mixins.umapyoi.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.293] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
-[109月2025 16:57:17.948] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [last_smith]
-[109月2025 16:57:21.232] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.1, for MC 1.20.1 with MCP 20230612.114412
-[109月2025 16:57:21.234] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.1 Initialized
-[109月2025 16:57:21.795] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[109月2025 16:57:21.802] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 4.245 ms
-[109月2025 16:57:22.175] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/mr099/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.1_mapped_official_1.20.1/forge-1.20.1-47.3.1_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[109月2025 16:57:22.175] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/mr099/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.1_mapped_official_1.20.1/forge-1.20.1-47.3.1_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[109月2025 16:57:22.375] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
-[109月2025 16:57:22.384] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 7 ms
-[109月2025 16:57:22.384] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: last_smith
-[109月2025 16:57:22.475] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: last_smith finished after 90 ms
-[109月2025 16:57:22.475] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: last_smith
-[109月2025 16:57:22.491] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: last_smith finished after 15 ms
-[109月2025 16:57:22.491] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: TLS SlashBlade Definition Registry
-[109月2025 16:57:22.502] [main/INFO] [net.minecraft.data.DataGenerator/]: TLS SlashBlade Definition Registry finished after 10 ms
-[109月2025 16:57:22.502] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[109月2025 16:57:22.525] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 23 ms
-[109月2025 16:57:22.525] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id last_smith
-[109月2025 16:57:22.527] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id last_smith finished after 1 ms
-[109月2025 16:57:22.527] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id umapyoi
-[109月2025 16:57:22.533] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id umapyoi finished after 6 ms
-[109月2025 16:57:22.533] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[109月2025 16:57:22.594] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 60 ms
-[109月2025 16:57:22.594] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
-[109月2025 16:57:22.608] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 14 ms
-[109月2025 16:57:22.610] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 234 ms
-[109月2025 16:57:22.617] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 309, old count: 309, new count: 310, removed stale: 0, written: 2
+[022月2026 12:53:28.729] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\mr099\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.1, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, last_smith, --all, --output, D:\minecraft_1201_modding\The-Last-Smith-Resharpened\src\generated\resources, --existing, D:\minecraft_1201_modding\The-Last-Smith-Resharpened\src\main\resources]
+[022月2026 12:53:28.737] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.11 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[022月2026 12:53:28.856] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[022月2026 12:53:28.898] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/mr099/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[022月2026 12:53:29.159] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\mr099\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.1\b9fa98d5c9fa107169a3390a1c8993d2134fbf54\javafmllanguage-1.20.1-47.3.1.jar is missing mods.toml file
+[022月2026 12:53:29.162] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\mr099\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.1\aaa252b4d4c34d0c02e647d7a2ef3df3bc11d73a\lowcodelanguage-1.20.1-47.3.1.jar is missing mods.toml file
+[022月2026 12:53:29.165] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\mr099\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.1\1722b26446496b5e686cdf124342e8f7fd33dc91\mclanguage-1.20.1-47.3.1.jar is missing mods.toml file
+[022月2026 12:53:29.168] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\mr099\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.1\4ed2bfe4ae3a6c27f587d45f58d648db68d19c00\fmlcore-1.20.1-47.3.1.jar is missing mods.toml file
+[022月2026 12:53:29.329] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[022月2026 12:53:30.646] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[022月2026 12:53:30.668] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\mr099\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, last_smith, --all, --output, D:\minecraft_1201_modding\The-Last-Smith-Resharpened\src\generated\resources, --existing, D:\minecraft_1201_modding\The-Last-Smith-Resharpened\src\main\resources]
+[022月2026 12:53:30.991] [main/INFO] [mixin/]: Remapping refMap emi-xplat-refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:30.994] [main/INFO] [mixin/]: Remapping refMap mixins.mmlib.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:30.996] [main/INFO] [mixin/]: Remapping refMap player-animation-lib-minecraft_common-refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:30.996] [main/INFO] [mixin/]: Remapping refMap slashblade.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:30.999] [main/INFO] [mixin/]: Remapping refMap slashblade.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:31.000] [main/INFO] [mixin/]: Remapping refMap slashblade.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:31.001] [main/INFO] [mixin/]: Remapping refMap slashblade.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:31.002] [main/WARN] [mixin/]: Reference map 'energyblade.refmap.json' for energyblade.mixins.json could not be read. If this is a development environment you can ignore this message
+[022月2026 12:53:31.003] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:31.004] [main/INFO] [mixin/]: Remapping refMap mixins.umapyoi.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:31.004] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using D:\minecraft_1201_modding\The-Last-Smith-Resharpened/build/createSrgToMcp/output.srg
+[022月2026 12:53:31.795] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [last_smith]
+[022月2026 12:53:35.445] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.1, for MC 1.20.1 with MCP 20230612.114412
+[022月2026 12:53:35.448] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.1 Initialized
+[022月2026 12:53:35.989] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[022月2026 12:53:35.992] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 2.429 ms
+[022月2026 12:53:36.355] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/mr099/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.1_mapped_official_1.20.1/forge-1.20.1-47.3.1_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[022月2026 12:53:36.355] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/mr099/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.1_mapped_official_1.20.1/forge-1.20.1-47.3.1_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[022月2026 12:53:36.692] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
+[022月2026 12:53:36.698] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 5 ms
+[022月2026 12:53:36.698] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: last_smith
+[022月2026 12:53:36.794] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: last_smith finished after 95 ms
+[022月2026 12:53:36.794] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: last_smith
+[022月2026 12:53:36.837] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: last_smith finished after 42 ms
+[022月2026 12:53:36.837] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: TLS SlashBlade Definition Registry
+[022月2026 12:53:36.858] [main/INFO] [net.minecraft.data.DataGenerator/]: TLS SlashBlade Definition Registry finished after 21 ms
+[022月2026 12:53:36.858] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[022月2026 12:53:36.891] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 32 ms
+[022月2026 12:53:36.891] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id last_smith
+[022月2026 12:53:36.894] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id last_smith finished after 1 ms
+[022月2026 12:53:36.894] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id umapyoi
+[022月2026 12:53:36.908] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id umapyoi finished after 13 ms
+[022月2026 12:53:36.908] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[022月2026 12:53:37.069] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 161 ms
+[022月2026 12:53:37.069] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
+[022月2026 12:53:37.094] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 24 ms
+[022月2026 12:53:37.094] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 402 ms
+[022月2026 12:53:37.108] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 318, old count: 313, new count: 319, removed stale: 0, written: 10
