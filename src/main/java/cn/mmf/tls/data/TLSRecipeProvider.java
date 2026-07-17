@@ -4,8 +4,10 @@ import java.util.concurrent.CompletableFuture;
 
 import cn.mcmod_mmf.mmlib.data.AbstractRecipeProvider;
 import cn.mmf.tls.TheLastSmith;
-import cn.mmf.tls.item.ItemRegistry;
+import cn.mmf.tls.data.tag.TLSItemTags;
+import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.data.builtin.SlashBladeBuiltInRegistry;
+import mods.flammpfeil.slashblade.item.SwordType;
 import mods.flammpfeil.slashblade.recipe.RequestDefinition;
 import mods.flammpfeil.slashblade.recipe.SlashBladeIngredient;
 import mods.flammpfeil.slashblade.recipe.SlashBladeShapedRecipeBuilder;
@@ -14,6 +16,7 @@ import mods.flammpfeil.slashblade.registry.SlashBladeItems;
 import mods.flammpfeil.slashblade.registry.slashblade.EnchantmentDefinition;
 import mods.flammpfeil.slashblade.registry.slashblade.SlashBladeDefinition;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -22,11 +25,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.NotNull;
@@ -347,6 +354,21 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
                 .define('B', Ingredient.of(Items.IRON_SWORD))
                 .unlockedBy(getHasName(Items.IRON_SWORD), has(Items.IRON_SWORD))
                 .save(consumer, TheLastSmith.prefix("sweapon"));
+
+        // 胧村正配方
+        SlashBladeShapedRecipeBuilder.shaped(OBORO_MURAMASA.location())
+                .pattern("OFO")
+                .pattern("SBK")
+                .pattern("OFO")
+                .define('O', Ingredient.of(PROUDSOUL_SPHERE.get()))
+                .define('F', Ingredient.of(SAKURA_FULL.get()))
+                .define('S', namedBladeBase(tlsLoc("muramasa_kagura"),
+                        req().name(tlsLoc("muramasa_kagura")).proudSoul(5000).killCount(1500).refineCount(20).build()))
+                .define('B', SCROLL_MURAMASA.get())
+                .define('K', namedBladeBase(ResourceLocation.fromNamespaceAndPath(SlashBlade.MODID, "muramasa"),
+                        req().name(ResourceLocation.fromNamespaceAndPath(SlashBlade.MODID, "muramasa")).proudSoul(5000).killCount(1500).refineCount(20).build()))
+                .unlockedBy(getHasName(SCROLL_MURAMASA.get()), has(SCROLL_MURAMASA.get()))
+                .save(consumer, TheLastSmith.prefix("oboro_muramasa"));
     }
 
     // ─── 2026-06-13:17-35 Blade Smithing Recipes (slashblade:slashblade_smithing) ───
@@ -355,6 +377,28 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
         ResourceLocation modLoc = ResourceLocation.fromNamespaceAndPath(TheLastSmith.MODID, "unused");
         // Using inline lambdas for clarity
 
+        // 原拔刀剑配方覆盖
+        addBladeSmithingCover(consumer, "slashblade_bamboo",
+                bladeItem(SCROLL_BASIC.get()),
+                simpleBase(SLASHBLADE_WOOD.get()),
+                Ingredient.of(TLSItemTags.BAMBOO),
+                SlashBladeItems.SLASHBLADE_BAMBOO.getId());
+        addBladeSmithingCover(consumer, "slashblade_white",
+                bladeItem(SCROLL_BASIC.get()),
+                simpleBase(SLASHBLADE_WOOD.get()),
+                bladeItem(BLADE.get()),
+                SlashBladeItems.SLASHBLADE_WHITE.getId());
+        addBladeSmithingCover(consumer, "slashblade",
+                bladeItem(SCROLL_BLADE.get()),
+                simpleBase(SLASHBLADE_WHITE.get()),
+                namedBladeBase(SLASHBLADE_SILVERBAMBOO.getId(), req().name(ResourceLocation.fromNamespaceAndPath(SlashBlade.MODID, "slashblade_silverbamboo")).addSwordType(SwordType.BROKEN).build()),
+                SlashBladeItems.SLASHBLADE.getId());
+        addBladeSmithingCover(consumer, "ruby",
+                bladeItem(SCROLL_KATANA.get()),
+                simpleBase(SlashBladeItems.SLASHBLADE.get()),
+                bladeItem(SAKURA.get()),
+                SlashBladeBuiltInRegistry.RUBY.location());
+
         // --- nagasada: blade_sakura + scroll_sakura → nagasada (simple item base)
         addBladeSmithing(consumer, "nagasada",
                 bladeItem(SCROLL_SAKURA.get()), simpleBase(SlashBladeItems.SLASHBLADE_SILVERBAMBOO.get()),
@@ -362,7 +406,7 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
 
         // --- nameless_odachi: proudsoul_ingot + scroll_odachi → nameless_odachi (simple item base)
         addBladeSmithing(consumer, "nameless_odachi",
-                bladeItem(SCROLL_ODACHI.get()), simpleBase(SlashBladeItems.SLASHBLADE_SILVERBAMBOO.get()),
+                bladeItem(SCROLL_ODACHI.get()), simpleBase(SlashBladeItems.SLASHBLADE.get()),
                 bladeItem(mods.flammpfeil.slashblade.registry.SlashBladeItems.PROUDSOUL_INGOT.get()),
                 tlsLoc("nameless_odachi"));
 
@@ -566,6 +610,17 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
                         RecipeCategory.MISC, resultBlade)
                 .unlocks("has_" + name, has(template.getItems()[0].getItem()))
                 .save(consumer, TheLastSmith.prefix(name));
+    }
+
+    private void addBladeSmithingCover(RecipeOutput consumer, String name,
+                                       Ingredient template, Ingredient base, Ingredient addition,
+                                       ResourceLocation resultBlade) {
+        ICondition condition = new ModLoadedCondition(SlashBlade.MODID);
+        RecipeOutput output = consumer.withConditions(condition);
+        SlashBladeSmithingRecipeBuilder.smithing(template, base, addition, RecipeCategory.MISC, resultBlade)
+                .unlocks("has_" + name, has(template.getItems()[0].getItem()))
+                .save(output, SlashBlade.prefix(name));
+
     }
 
     private Ingredient simpleBase(net.minecraft.world.level.ItemLike item) {
