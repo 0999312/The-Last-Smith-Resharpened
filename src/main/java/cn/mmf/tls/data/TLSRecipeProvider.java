@@ -71,34 +71,34 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
                 ).unlockedBy(getHasName(BLADE_SAKURA_UNFINISHED_2.get()), has(BLADE_SAKURA_UNFINISHED_2.get()))
                 .save(consumer, prefix("blade_sakura_step_3"));
         SimpleCookingRecipeBuilder.blasting(
-                Ingredient.of(SAKURA_STEEL_INGOT.get()),
-                RecipeCategory.MISC,
-                SAKURA_SPHERE.get(),
-                1.0f,
-                200
-        ).unlockedBy(getHasName(SAKURA_STEEL_INGOT.get()), has(SAKURA_STEEL_INGOT.get()))
+                        Ingredient.of(SAKURA_STEEL_INGOT.get()),
+                        RecipeCategory.MISC,
+                        SAKURA_SPHERE.get(),
+                        1.0f,
+                        200
+                ).unlockedBy(getHasName(SAKURA_STEEL_INGOT.get()), has(SAKURA_STEEL_INGOT.get()))
                 .save(consumer, prefix("sakura_sphere"));
     }
 
     private void addAllResearchRecipe(RecipeOutput consumer) {
         addResearchRecipe(consumer, "scroll_basic", SLASHBLADE_WOOD, SCROLL_BASIC);
-        addResearchRecipe(consumer, "scroll_basic_copy", SCROLL_BASIC, SCROLL_BASIC);
+        addResearchRecipeCopy(consumer, "scroll_basic_copy", SCROLL_BASIC, SCROLL_BASIC, 2);
 
-        addResearchRecipe(consumer, "scroll_bewitched_inferno", SCROLL_STAR, SCROLL_BEWITCHED);
+        addResearchRecipeSetPaper(consumer, "scroll_bewitched_inferno", SCROLL_HEIL, SCROLL_STAR, SCROLL_BEWITCHED);
 
         addResearchRecipe(consumer, "scroll_blade", SLASHBLADE_WHITE, SCROLL_BLADE);
-        addResearchRecipe(consumer, "scroll_blade_copy", SCROLL_BLADE, SCROLL_BLADE);
+        addResearchRecipeCopy(consumer, "scroll_blade_copy", SCROLL_BLADE, SCROLL_BLADE, 2);
 
         addResearchRecipe(consumer, "scroll_blood", SILVERBAMBOO_BLOOD, SCROLL_BLOOD);
-        addResearchRecipe(consumer, "scroll_blood_copy", SCROLL_BLOOD, SCROLL_BLOOD);
+        addResearchRecipeCopy(consumer, "scroll_blood_copy", SCROLL_BLOOD, SCROLL_BLOOD, 2);
 
-        addResearchRecipe(consumer, "scroll_exorcism_copy", SCROLL_EXORCISM, SCROLL_EXORCISM);
+        addResearchRecipeCopy(consumer, "scroll_exorcism_copy", SCROLL_EXORCISM, SCROLL_EXORCISM, 2);
         addResearchRecipe(consumer, "scroll_exorcism_ginkgo", EXORCISM_GINKGO, SCROLL_EXORCISM);
         addResearchRecipe(consumer, "scroll_exorcism_sakura", EXORCISM_SAKURA, SCROLL_EXORCISM);
         addResearchRecipe(consumer, "scroll_exorcism_yuki", EXORCISM_YUKI, SCROLL_EXORCISM);
 
         addResearchRecipe(consumer, "scroll_god", GOLDENBAMBOO, SCROLL_GOD);
-        addResearchRecipe(consumer, "scroll_god_copy", SCROLL_GOD, SCROLL_GOD);
+        addResearchRecipeCopy(consumer, "scroll_god_copy", SCROLL_GOD, SCROLL_GOD, 2);
 
         addResearchRecipe(consumer, "scroll_inferno_hakurouken", HAKUROUKEN_NETHER, SCROLL_HEIL);
         // TODO scroll_inferno_nihilbx 似蛭，待添加
@@ -106,14 +106,14 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
 
         // 2026-06-13:17-38 Fixed: use blankNameless() to only match un-named blades, preventing conflict with named blade recipes
         addResearchRecipe(consumer, "scroll_katana", SlashBladeIngredient.blankNameless(), SCROLL_KATANA);
-        addResearchRecipe(consumer, "scroll_katana_copy", SCROLL_KATANA, SCROLL_KATANA);
+        addResearchRecipeCopy(consumer, "scroll_katana_copy", SCROLL_KATANA, SCROLL_KATANA, 2);
 
-        addResearchRecipe(consumer, "scroll_last_1", SCROLL_TENGU_VOL2, SCROLL_TENGU_FULL);
-        addResearchRecipe(consumer, "scroll_last_2", SCROLL_TENGU_VOL1, SCROLL_TENGU_FULL);
+        addResearchRecipeSetPaper(consumer, "scroll_last_1", SCROLL_TENGU_VOL1, SCROLL_TENGU_VOL2, SCROLL_TENGU_FULL);
+        addResearchRecipeSetPaper(consumer, "scroll_last_2", SCROLL_TENGU_VOL2, SCROLL_TENGU_VOL1, SCROLL_TENGU_FULL);
 
         addResearchRecipe(consumer, "scroll_mortal", FUSHIGIRI, SCROLL_MORTAL);
 
-        addResearchRecipe(consumer, "scroll_muramasa_copy", SCROLL_MURAMASA, SCROLL_MURAMASA);
+        addResearchRecipeCopy(consumer, "scroll_muramasa_copy", SCROLL_MURAMASA, SCROLL_MURAMASA, 2);
         addResearchRecipe(consumer, "scroll_muramasa_from_chizuki", SlashBladeBuiltInRegistry.MURAMASA, SCROLL_MURAMASA);
         addResearchRecipe(consumer, "scroll_muramasa_from_kagura", MURAMASA_KAGURA, SCROLL_MURAMASA);
 
@@ -128,43 +128,57 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
                 SlashBladeIngredient.of(SlashBladeBuiltInRegistry.RODAI_DIAMOND.location()),
                 SlashBladeIngredient.of(SlashBladeBuiltInRegistry.RODAI_NETHERITE.location())
         ), SCROLL_NAMED);
-        addResearchRecipe(consumer, "scroll_named_copy", SCROLL_NAMED, SCROLL_NAMED);
+        addResearchRecipeCopy(consumer, "scroll_named_copy", SCROLL_NAMED, SCROLL_NAMED, 2);
         // TODO scroll_named_sjap 日系附属包名刀，待添加
 
         addResearchRecipe(consumer, "scroll_oboro_muarmasa", OBORO_MURAMASA, SCROLL_CAUSALITY);
-        addResearchRecipe(consumer, "scroll_odachi", SCROLL_KATANA, SCROLL_ODACHI);
-        addResearchRecipe(consumer, "scroll_odachi_copy", SCROLL_ODACHI, SCROLL_ODACHI);
+        addResearchRecipeSetPaper(consumer, "scroll_odachi", SCROLL_BLADE, SCROLL_KATANA, SCROLL_ODACHI);
+        addResearchRecipeCopy(consumer, "scroll_odachi_copy", SCROLL_ODACHI, SCROLL_ODACHI, 2);
 
         addResearchRecipe(consumer, "scroll_sakura", SAKURA_FULL, SCROLL_SAKURA);
         addResearchRecipe(consumer, "scroll_sakura_blade", NAGASADA, SCROLL_SAKURA_BLADE);
-        addResearchRecipe(consumer, "scroll_sakura_blade_copy", SCROLL_SAKURA_BLADE, SCROLL_SAKURA_BLADE);
-        addResearchRecipe(consumer, "scroll_sakura_copy", SCROLL_SAKURA, SCROLL_SAKURA);
+        addResearchRecipeCopy(consumer, "scroll_sakura_blade_copy", SCROLL_SAKURA_BLADE, SCROLL_SAKURA_BLADE, 2);
+        addResearchRecipeCopy(consumer, "scroll_sakura_copy", SCROLL_SAKURA, SCROLL_SAKURA, 2);
 
         addResearchRecipe(consumer, "scroll_sakura_full", SAKURA_SPHERE, SCROLL_SAKURA_FULL);
-        addResearchRecipe(consumer, "scroll_sakura_full_copy", SCROLL_SAKURA_FULL, SCROLL_SAKURA_FULL);
+        addResearchRecipeCopy(consumer, "scroll_sakura_full_copy", SCROLL_SAKURA_FULL, SCROLL_SAKURA_FULL, 2);
 
-        addResearchRecipe(consumer, "scroll_sharpness", SCROLL_GOD, SCROLL_SHARPNESS);
+        addResearchRecipeSetPaper(consumer, "scroll_sharpness", SCROLL_CAUSALITY, SCROLL_GOD, SCROLL_SHARPNESS);
 
         addResearchRecipe(consumer, "scroll_shura", EVIL_SHURA, SCROLL_SHURA);
-        addResearchRecipe(consumer, "scroll_shura_copy", SCROLL_SHURA, SCROLL_SHURA);
+        addResearchRecipeCopy(consumer, "scroll_shura_copy", SCROLL_SHURA, SCROLL_SHURA, 2);
 
         addResearchRecipe(consumer, "scroll_star", CompoundIngredient.of(
                 SlashBladeIngredient.of(SlashBladeBuiltInRegistry.SANGE.location()),
                 SlashBladeIngredient.of(SlashBladeBuiltInRegistry.YASHA_TRUE.location()),
                 SlashBladeIngredient.of(SlashBladeBuiltInRegistry.OROTIAGITO.location())
         ), SCROLL_STAR);
-        addResearchRecipe(consumer, "scroll_star_copy", SCROLL_STAR, SCROLL_STAR);
+        addResearchRecipeCopy(consumer, "scroll_star_copy", SCROLL_STAR, SCROLL_STAR, 2);
         // TODO scroll_star_sjap 日系附属包星落者，待添加
 
         addResearchRecipe(consumer, "scroll_tengu_1", AMAGUMO_KAZE, SCROLL_TENGU_VOL1);
         addResearchRecipe(consumer, "scroll_tengu_2", AMAGUMO_KUMO, SCROLL_TENGU_VOL2);
 
         addResearchRecipe(consumer, "scroll_wood_basic", SLASHBLADE_BAMBOO, SCROLL_WOOD_BASIC);
-        addResearchRecipe(consumer, "scroll_wood_basic_copy", SCROLL_WOOD_BASIC, SCROLL_WOOD_BASIC);
+        addResearchRecipeCopy(consumer, "scroll_wood_basic_copy", SCROLL_WOOD_BASIC, SCROLL_WOOD_BASIC, 2);
         addResearchRecipe(consumer, "scroll_wood_kiwami", BAMBOO_HERMIT, SCROLL_WOOD_KIWAMI);
-        addResearchRecipe(consumer, "scroll_wood_kiwami_copy", SCROLL_WOOD_KIWAMI, SCROLL_WOOD_KIWAMI);
+        addResearchRecipeCopy(consumer, "scroll_wood_kiwami_copy", SCROLL_WOOD_KIWAMI, SCROLL_WOOD_KIWAMI, 2);
 
         addResearchRecipe(consumer, "scroll_yamato", YAMATO, SCROLL_YAMATO);
+    }
+
+    private void addResearchRecipeCopy(RecipeOutput consumer, String id, DeferredHolder<Item, Item> blade, DeferredHolder<Item, Item> result, int resultCount) {
+        addResearchRecipeCopy(consumer, id, Ingredient.of(blade.get()), result.get(), resultCount);
+
+    }
+
+    private void addResearchRecipeCopy(RecipeOutput consumer, String id, Ingredient blade,
+                                       net.minecraft.world.level.ItemLike result, int resultCount) {
+        // 2026-06-13:17-39 Fixed: call result.asItem() to convert ItemLike → Item for researching()
+        cn.mmf.tls.recipe.TLSResearchRecipeBuilder
+                .researching(blade, result.asItem(), resultCount)
+                .unlockedBy(getHasName(result.asItem()), has(result.asItem()))
+                .save(consumer, TheLastSmith.prefix("research/" + id));
     }
 
     private void addResearchRecipe(RecipeOutput consumer, String id, Ingredient blade,
@@ -186,6 +200,17 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
 
     private void addResearchRecipe(RecipeOutput con, String id, DeferredHolder<Item, Item> blade, DeferredHolder<Item, Item> result) {
         addResearchRecipe(con, id, Ingredient.of(blade.get()), result.get());
+    }
+
+    private void addResearchRecipeSetPaper(RecipeOutput con, String id, DeferredHolder<Item, Item> paper, DeferredHolder<Item, Item> blade, DeferredHolder<Item, Item> result) {
+        addResearchRecipeSetPaper(con, id, Ingredient.of(paper.get()), Ingredient.of(blade.get()), result.get());
+    }
+
+    private void addResearchRecipeSetPaper(RecipeOutput consumer, String id, Ingredient paper, Ingredient blade, net.minecraft.world.level.ItemLike result) {
+        cn.mmf.tls.recipe.TLSResearchRecipeBuilder
+                .researching(blade, result.asItem()).paper(paper)
+                .unlockedBy(getHasName(result.asItem()), has(result.asItem()))
+                .save(consumer, TheLastSmith.prefix("research/" + id));
     }
 
     // ─── 2026-06-13:17-35 Smithing Transform Recipes (vanilla smithing table) ───

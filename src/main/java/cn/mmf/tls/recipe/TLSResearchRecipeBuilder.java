@@ -40,6 +40,10 @@ public class TLSResearchRecipeBuilder implements RecipeBuilder {
         return new TLSResearchRecipeBuilder(blade, new ItemStack(result));
     }
 
+    public static TLSResearchRecipeBuilder researching(Ingredient blade, Item result, int count) {
+        return new TLSResearchRecipeBuilder(blade, new ItemStack(result, count));
+    }
+
     public static TLSResearchRecipeBuilder researching(Ingredient blade, ItemStack result) {
         return new TLSResearchRecipeBuilder(blade, result);
     }
