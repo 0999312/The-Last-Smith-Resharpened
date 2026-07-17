@@ -16,7 +16,6 @@ import mods.flammpfeil.slashblade.registry.SlashBladeItems;
 import mods.flammpfeil.slashblade.registry.slashblade.EnchantmentDefinition;
 import mods.flammpfeil.slashblade.registry.slashblade.SlashBladeDefinition;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -25,12 +24,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
@@ -374,7 +371,7 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
     // ─── 2026-06-13:17-35 Blade Smithing Recipes (slashblade:slashblade_smithing) ───
 
     private void addBladeSmithingRecipes(RecipeOutput consumer) {
-        ResourceLocation modLoc = ResourceLocation.fromNamespaceAndPath(TheLastSmith.MODID, "unused");
+        ResourceLocation.fromNamespaceAndPath(TheLastSmith.MODID, "unused");
         // Using inline lambdas for clarity
 
         // 原拔刀剑配方覆盖
