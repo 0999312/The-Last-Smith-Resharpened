@@ -826,17 +826,15 @@ public class TLSSlashBladeRegistry {
     }
 
     private static ResourceKey<SlashBladeDefinition> register(String id) {
-        ResourceKey<SlashBladeDefinition> loc = ResourceKey.create(SlashBladeDefinition.REGISTRY_KEY,
-                TheLastSmith.prefix(id));
-        return loc;
+        return ResourceKey.create(SlashBladeDefinition.REGISTRY_KEY, TheLastSmith.prefix(id));
     }
 
     private static ResourceKey<SlashBladeDefinition> registerSJAP(String id) {
-        ResourceKey<SlashBladeDefinition> loc = ResourceKey.create(SlashBladeDefinition.REGISTRY_KEY,
+        /*new ResourceLocation("slashblade_addon", id)*/
+        return ResourceKey.create(SlashBladeDefinition.REGISTRY_KEY,
                 /*new ResourceLocation("slashblade_addon", id)*/
                 ResourceLocation.fromNamespaceAndPath("slashblade_addon", id)
         );
-        return loc;
     }
 
     // 2026-06-13:17-40: blades_derby 联动武器独立命名空间注册

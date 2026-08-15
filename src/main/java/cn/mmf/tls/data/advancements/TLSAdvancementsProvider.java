@@ -24,9 +24,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.data.AdvancementProvider.AdvancementGenerator;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import static cn.mmf.tls.data.builtin.TLSSlashBladeRegistry.*;
 
@@ -37,12 +41,13 @@ import static cn.mmf.tls.data.builtin.TLSSlashBladeRegistry.*;
  */
 public class TLSAdvancementsProvider implements AdvancementGenerator {
 
+    private static final Logger log = LogManager.getLogger(TLSAdvancementsProvider.class);
     // 2026-06-14:09-10 Captured during generate() for use by icon helpers
     private Provider currentRegistries;
 
     @Override
-    public void generate(Provider registries, Consumer<AdvancementHolder> saver,
-                         ExistingFileHelper fileHelper) {
+    public void generate(@NotNull Provider registries, @NotNull Consumer<AdvancementHolder> saver,
+                         @NotNull ExistingFileHelper fileHelper) {
         this.currentRegistries = registries;
         var root = simple(saver, fileHelper, null, "root",
                 ItemRegistry.SCROLL_WOOD_BASIC.get(),
@@ -170,9 +175,26 @@ public class TLSAdvancementsProvider implements AdvancementGenerator {
     private static Component tl(String k) { return Component.translatable("advancement.last_smith." + k); }
     private static ResourceLocation bg(String p) { return tls(p); }
 
-    /** Single-criterion advancement with simple item trigger */
+    /**
+     * 2026-08-15:16-45: Item icon overload -> wraps into a bare ItemStack.
+     * 2026-08-15:16-45: Item 图标重载 -> 包装为无数据组件的 ItemStack。
+     */
     private AdvancementHolder simple(Consumer<AdvancementHolder> s, ExistingFileHelper fh,
             AdvancementHolder parent, String id, ItemLike icon,
+            Component title, Component desc, AdvancementType type,
+            boolean toast, boolean announce, boolean hidden, ResourceLocation bg,
+            CriterionEntry c) {
+        return simple(s, fh, parent, id, new ItemStack(icon), title, desc, type,
+                toast, announce, hidden, bg, c);
+    }
+
+    /**
+     * Single-criterion advancement with simple item trigger
+     * 2026-08-15:16-45: ItemStack overload keeps NBT/data-components (blade_state) in the JSON.
+     * 2026-08-15:16-45: ItemStack 重载保留 NBT/数据组件（blade_state），使生成的图标 JSON 正确。
+     */
+    private AdvancementHolder simple(Consumer<AdvancementHolder> s, ExistingFileHelper fh,
+            AdvancementHolder parent, String id, ItemStack icon,
             Component title, Component desc, AdvancementType type,
             boolean toast, boolean announce, boolean hidden, ResourceLocation bg,
             CriterionEntry c) {
@@ -236,15 +258,17 @@ public class TLSAdvancementsProvider implements AdvancementGenerator {
     /**
      * 2026-06-14:09-10: Uses generated registries to get proper blade ItemStack
      * with NBT data. Falls back to default SlashBlade on error.
+     * 2026-08-15:16-45: Return the full ItemStack so the blade_state component is kept.
+     * 2026-08-15:16-45: 返回完整 ItemStack，保留 blade_state 数据组件。
      */
-    private ItemLike getIcon(ResourceKey<SlashBladeDefinition> key) {
+    private ItemStack getIcon(ResourceKey<SlashBladeDefinition> key) {
         try {
             return currentRegistries.lookupOrThrow(SlashBladeDefinition.REGISTRY_KEY)
                     .getOrThrow(key).value()
-                    .getBlade(SlashBladeItems.SLASHBLADE.get(), currentRegistries)
-                    .getItem();
+                    .getBlade(SlashBladeItems.SLASHBLADE.get(), currentRegistries);
         } catch (Exception e) {
-            return SlashBladeItems.SLASHBLADE.get();
+            log.error(e);
+            return new ItemStack(SlashBladeItems.SLASHBLADE.get());
         }
     }
 

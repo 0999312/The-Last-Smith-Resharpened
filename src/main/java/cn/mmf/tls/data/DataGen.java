@@ -23,6 +23,7 @@ import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import org.jetbrains.annotations.NotNull;
 
 @EventBusSubscriber(modid = TheLastSmith.MODID)
 public class DataGen {
@@ -39,13 +40,16 @@ public class DataGen {
         dataGenerator.addProvider(event.includeClient(), new TLSBlockStateProvider(packOutput, existingFileHelper));
         dataGenerator.addProvider(event.includeClient(), new TLSItemModelProvider(packOutput, existingFileHelper));
 
-        dataGenerator.addProvider(event.includeServer(),
+        // 2026-08-15:16-45 Keep the provider so its combined lookup (vanilla + last_smith named_blades) can be reused.
+        // 2026-08-15:16-45 保留该 provider 实例，以便复用其合并 lookup（原版注册表 + last_smith named_blades 注册表）。
+        DatapackBuiltinEntriesProvider bladeProvider =
                 new DatapackBuiltinEntriesProvider(packOutput, lookupProvider, bladeBuilder, Set.of(TheLastSmith.MODID)) {
                     @Override
-                    public String getName() {
+                    public @NotNull String getName() {
                         return "TLS SlashBlade Definition Registry";
                     }
-                });
+                };
+        dataGenerator.addProvider(event.includeServer(), bladeProvider);
         var blockTagsProvider = new TLSBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
 
         dataGenerator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Set.of(),
@@ -55,13 +59,11 @@ public class DataGen {
         dataGenerator.addProvider(event.includeServer(), blockTagsProvider);
         dataGenerator.addProvider(event.includeServer(), new TLSItemTagsProvider(packOutput, lookupProvider,
                 blockTagsProvider.contentsGetter(), existingFileHelper));
-
-        bladeBuilder = new RegistrySetBuilder().add(SlashBladeDefinition.REGISTRY_KEY,
-                TLSSlashBladeRegistry::registerAll);
-
         dataGenerator.addProvider(event.includeServer(), new TLSRecipeProvider(packOutput, lookupProvider));
+        // 2026-08-15:16-45 Use the combined provider so getIcon() can resolve slashblade:named_blades.
+        // 2026-08-15:16-45 使用合并后的 provider，使 getIcon() 能解析 slashblade:named_blades 注册表。
         dataGenerator.addProvider(event.includeServer(), new AdvancementProvider(
-                packOutput, lookupProvider, existingFileHelper,
+                packOutput, bladeProvider.getRegistryProvider(), existingFileHelper,
                 List.of(new TLSAdvancementsProvider())));
     }
 }
