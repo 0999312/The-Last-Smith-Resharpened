@@ -33,6 +33,7 @@ import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import static cn.mmf.tls.data.builtin.TLSSlashBladeRegistry.*;
+import static mods.flammpfeil.slashblade.data.builtin.SlashBladeBuiltInRegistry.SANGE;
 
 /**
  * 2026-06-14:09-05 Complete advancement tree DataGen.
@@ -127,17 +128,23 @@ public class TLSAdvancementsProvider implements AdvancementGenerator {
                 c("roukanken", bladePred(tls("roukanken"))),
                 c("hakurouken", bladePred(tls("hakurouken"))));
 
-        var inf = bladeAdv(saver, fileHelper, rh, "inferno",
+        var inf = multi(saver, fileHelper, rh, "inferno",
                 ROUKANKEN_NETHER, tl("inferno.title"), tl("inferno.desc"),
-                AdvancementType.CHALLENGE, false, tls("roukanken_nether"));
+                AdvancementType.CHALLENGE, false, List.of(List.of("roukanken_nether", "hakurouken_nether")),
+                c("roukanken_nether", bladePred(tls("roukanken_nether"))),
+                c("hakurouken_nether", bladePred(tls("hakurouken_nether"))));
 
-        bladeAdv(saver, fileHelper, inf, "bewitched",
-                HAKUROUKEN_NETHER, tl("bewitched.title"), tl("bewitched.desc"),
-                AdvancementType.CHALLENGE, false, tls("hakurouken_nether"));
+        simple(saver, fileHelper, inf, "bewitched",
+                ItemRegistry.SCROLL_BEWITCHED.get(),
+                tl("bewitched.title"), tl("bewitched.desc"),
+                AdvancementType.CHALLENGE, false, false, false, null,
+                c("has_blade", item(tls("scroll_bewitched"))));
 
-        var met = bladeAdv(saver, fileHelper, sn, "meteorn",
-                AMAGUMO_MUNIN, tl("meteorn.title"), tl("meteorn.desc"),
-                AdvancementType.CHALLENGE, false, tls("amagumo_munin"));
+        var met = simple(saver, fileHelper, sn, "meteorn",
+                ItemRegistry.SCROLL_STAR.get(),
+                tl("meteorn.title"), tl("meteorn.desc"),
+                AdvancementType.CHALLENGE, false, false, false, null,
+                c("has_blade", item(tls("scroll_star"))));
 
         bladeAdv(saver, fileHelper, met, "yamato",
                 YAMATO, tl("yamato.title"), tl("yamato.desc"),
@@ -155,9 +162,11 @@ public class TLSAdvancementsProvider implements AdvancementGenerator {
                 OBORO_MURAMASA, tl("oboro_muramasa.title"), tl("oboro_muramasa.desc"),
                 AdvancementType.GOAL, false, tls("oboro_muramasa"));
 
-        bladeAdv(saver, fileHelper, om, "sharpness",
-                AMAGUMO_MUNIN, tl("sharpness.title"), tl("sharpness.desc"),
-                AdvancementType.CHALLENGE, false, tls("amagumo_kaze"));
+        simple(saver, fileHelper, om, "sharpness",
+                ItemRegistry.SCROLL_SHARPNESS.get(),
+                tl("sharpness.title"), tl("sharpness.desc"),
+                AdvancementType.CHALLENGE, false, false, false, null,
+                c("has_blade", item(tls("scroll_sharpness"))));
 
         bladeAdv(saver, fileHelper, ex, "shura",
                 EVIL_SHURA, tl("shura.title"), tl("shura.desc"),
