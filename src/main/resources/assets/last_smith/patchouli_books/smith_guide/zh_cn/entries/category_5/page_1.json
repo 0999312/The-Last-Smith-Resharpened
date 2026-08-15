@@ -1,6 +1,6 @@
 {
    "name" : "「魂樱之长刀」",
-   "icon" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"last_smith:model/roukan/model.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"last_smith:model/named/roukan/texture.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.last_smith.roukanken\", refine: 0, specialEffects: []}]",
+   "icon" : "slashblade:slashblade[slashblade:blade_state={\n   broken: 0b,\n   defaultBewitched: 1b,\n   translationKey: \"item.last_smith.roukanken\",\n   effectColor: -18491,\n   texture: \"last_smith:model/named/roukan/texture.png\",\n   sealed: 0b,\n   refine: 0,\n   comboRoot: \"slashblade:standby\",\n   effectColorInverse: 0b,\n   adjust: [0.0d, 0.0d, 0.0d],\n   proudSoul: 0,\n   killCount: 0,\n   specialEffects: [\n      \"last_smith:extra_sharpness\"\n   ],\n   slashArtsKey: \"last_smith:transmigration_slash\",\n   model: \"last_smith:model/named/roukan/model.obj\",\n   carryType: \"rninja\",\n   baseAttackModifier: 11.0f\n}]",
    "category" : "last_smith:category_5",
    "pages" : [
       {
