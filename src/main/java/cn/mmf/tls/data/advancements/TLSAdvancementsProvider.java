@@ -33,7 +33,6 @@ import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import static cn.mmf.tls.data.builtin.TLSSlashBladeRegistry.*;
-import static mods.flammpfeil.slashblade.data.builtin.SlashBladeBuiltInRegistry.SANGE;
 
 /**
  * 2026-06-14:09-05 Complete advancement tree DataGen.
