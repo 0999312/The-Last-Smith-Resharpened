@@ -1,0 +1,27 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:smite",
+      "lvl": 2
+    }
+  ],
+  "name": "last_smith:exorcism_ginkgo",
+  "properties": {
+    "attack_base": 5.0,
+    "max_damage": 70,
+    "slash_art": "last_smith:sakura_blistering_swords",
+    "special_effects": [
+      "last_smith:smite_se"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "ninja",
+    "model": "last_smith:model/named/sakura/model.obj",
+    "summon_sword_color": 16768306,
+    "texture": "last_smith:model/named/sakura/texture_1.png"
+  }
+}

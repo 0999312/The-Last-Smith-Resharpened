@@ -1,0 +1,20 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:sakura_full"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "name": "last_smith:nagasada",
+      "proud_soul": 1000
+    }
+  },
+  "blade": "last_smith:kusabimaru",
+  "template": {
+    "item": "last_smith:scroll_named"
+  }
+}

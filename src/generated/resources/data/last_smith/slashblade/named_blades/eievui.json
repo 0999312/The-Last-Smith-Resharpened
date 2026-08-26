@@ -1,0 +1,12 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "name": "last_smith:eievui",
+  "properties": {
+    "attack_base": 5.0,
+    "max_damage": 113
+  },
+  "render": {
+    "model": "last_smith:model/named/eievui/model.obj",
+    "texture": "last_smith:model/named/eievui/texture.png"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:smite",
+      "lvl": 4
+    },
+    {
+      "id": "minecraft:power",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:sharpness"
+    },
+    {
+      "id": "minecraft:fire_aspect"
+    }
+  ],
+  "name": "last_smith:hakurouken_nether",
+  "properties": {
+    "max_damage": 70,
+    "slash_art": "slashblade:drive_vertical",
+    "special_effects": [
+      "last_smith:extra_smite",
+      "slashblade:wither_edge"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "katana",
+    "model": "last_smith:model/named/hakurou/model.obj",
+    "summon_sword_color": 15921906,
+    "texture": "last_smith:model/named/hakurou/texture_tx.png"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:blade_sakura"
+  },
+  "base": {
+    "item": "slashblade:slashblade_silverbamboo"
+  },
+  "blade": "last_smith:nagasada",
+  "template": {
+    "item": "last_smith:scroll_sakura"
+  }
+}

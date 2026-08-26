@@ -1,0 +1,12 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "name": "last_smith:slashblade",
+  "properties": {
+    "max_damage": 50
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "last_smith:model/slashblade/model.obj",
+    "texture": "slashblade:model/named/yamato.png"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "slashblade"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_slashblade_bamboo": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_basic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "slashblade:slashblade_bamboo"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_slashblade_bamboo"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "slashblade:slashblade_bamboo"
+    ]
+  }
+}

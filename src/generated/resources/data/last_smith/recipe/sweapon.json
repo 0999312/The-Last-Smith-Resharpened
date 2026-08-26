@@ -1,0 +1,25 @@
+{
+  "type": "slashblade:shaped_blade",
+  "blade": "last_smith:sweapon",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_sword"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "L": {
+      "tag": "c:storage_blocks/lapis"
+    }
+  },
+  "pattern": [
+    "LI ",
+    "LI ",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "slashblade:slashblade"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "name": "last_smith:sweapon",
+  "properties": {
+    "max_damage": 50,
+    "sword_type": [
+      "sealed"
+    ]
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "last_smith:model/sweapon/model.obj",
+    "texture": "last_smith:model/sweapon/texture.png"
+  }
+}

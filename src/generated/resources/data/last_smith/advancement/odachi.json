@@ -1,0 +1,33 @@
+{
+  "parent": "last_smith:blade",
+  "criteria": {
+    "has_scroll": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_odachi"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.odachi.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "last_smith:scroll_odachi"
+    },
+    "title": {
+      "translate": "advancement.last_smith.odachi.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_scroll"
+    ]
+  ]
+}

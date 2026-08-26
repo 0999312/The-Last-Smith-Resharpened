@@ -1,0 +1,12 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "name": "last_smith:nagasada",
+  "properties": {
+    "max_damage": 100
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "last_smith:model/nagasada/model.obj",
+    "texture": "last_smith:model/nagasada/texture.png"
+  }
+}

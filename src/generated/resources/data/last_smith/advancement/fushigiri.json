@@ -1,0 +1,77 @@
+{
+  "parent": "last_smith:odachi",
+  "criteria": {
+    "has_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:fushigiri"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.fushigiri.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "components": {
+        "minecraft:enchantments": {
+          "levels": {
+            "minecraft:power": 5,
+            "minecraft:sharpness": 2,
+            "minecraft:smite": 4,
+            "minecraft:unbreaking": 2
+          }
+        },
+        "minecraft:rarity": "epic",
+        "slashblade:blade_state": {
+          "adjust": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseAttackModifier": 10.0,
+          "broken": false,
+          "carryType": "ninja",
+          "comboRoot": "slashblade:standby",
+          "defaultBewitched": true,
+          "effectColor": -7602176,
+          "effectColorInverse": false,
+          "killCount": 0,
+          "model": "last_smith:model/named/sekiro/fushigiri.obj",
+          "proudSoul": 0,
+          "refine": 0,
+          "sealed": false,
+          "slashArtsKey": "last_smith:fushigiri",
+          "specialEffects": [
+            "last_smith:fushigiri_se"
+          ],
+          "texture": "last_smith:model/named/sekiro/fushigiri.png",
+          "translationKey": "item.last_smith.fushigiri"
+        }
+      },
+      "count": 1,
+      "id": "slashblade:slashblade"
+    },
+    "title": {
+      "translate": "advancement.last_smith.fushigiri.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_blade"
+    ]
+  ]
+}

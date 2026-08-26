@@ -1,0 +1,32 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:unbreaking"
+    },
+    {
+      "id": "minecraft:power"
+    },
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 2
+    }
+  ],
+  "name": "last_smith:silverbamboo_blood",
+  "properties": {
+    "attack_base": 5.0,
+    "max_damage": 50,
+    "slash_art": "slashblade:circle_slash",
+    "special_effects": [
+      "last_smith:extra_power"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "slashblade:model/named/yamato.obj",
+    "texture": "last_smith:model/named/bamboolight/silverbamboo_blood.png"
+  }
+}

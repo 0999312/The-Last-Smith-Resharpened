@@ -1,0 +1,38 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:unbreaking",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:power",
+      "lvl": 5
+    },
+    {
+      "id": "minecraft:smite",
+      "lvl": 4
+    }
+  ],
+  "name": "last_smith:fushigiri",
+  "properties": {
+    "attack_base": 10.0,
+    "slash_art": "last_smith:fushigiri",
+    "special_effects": [
+      "last_smith:fushigiri_se"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "ninja",
+    "model": "last_smith:model/named/sekiro/fushigiri.obj",
+    "summon_sword_color": -7602176,
+    "texture": "last_smith:model/named/sekiro/fushigiri.png"
+  }
+}

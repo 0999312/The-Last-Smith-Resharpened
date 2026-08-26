@@ -1,0 +1,25 @@
+{
+  "type": "slashblade:shaped_blade",
+  "blade": "last_smith:eievui",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "slashblade:slashblade_white"
+    },
+    "I": {
+      "item": "last_smith:sakura"
+    },
+    "L": {
+      "item": "minecraft:dandelion"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "IBI",
+    "LIL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "slashblade:slashblade"
+  }
+}

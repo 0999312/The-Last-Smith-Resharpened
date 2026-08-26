@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "slashblade:proudsoul_ingot"
+  },
+  "base": {
+    "tag": "c:ingots/iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "last_smith:blade_unfinished_1"
+  },
+  "template": {
+    "item": "last_smith:scroll_basic"
+  }
+}

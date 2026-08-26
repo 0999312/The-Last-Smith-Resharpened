@@ -1,0 +1,16 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "name": "last_smith:muramasa_kagura",
+  "properties": {
+    "attack_base": 8.0,
+    "max_damage": 70,
+    "slash_art": "slashblade:drive_horizontal",
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "model": "last_smith:model/named/odachi/model.obj",
+    "texture": "last_smith:model/named/odachi/murasama_kagura.png"
+  }
+}

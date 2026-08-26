@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "last_smith:blade_sakura_step_2"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yakibatsuchi": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:yakibatsuchi"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yakibatsuchi"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "last_smith:blade_sakura_step_2"
+    ]
+  }
+}

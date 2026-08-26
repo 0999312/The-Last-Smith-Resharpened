@@ -1,0 +1,21 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:blade"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade_silverbamboo"
+    ],
+    "request": {
+      "sword_type": [
+        "broken"
+      ]
+    }
+  },
+  "blade": "slashblade:slashblade",
+  "template": {
+    "item": "last_smith:scroll_katana"
+  }
+}

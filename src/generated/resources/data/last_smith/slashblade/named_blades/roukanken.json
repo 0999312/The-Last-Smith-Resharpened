@@ -1,0 +1,27 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 3
+    }
+  ],
+  "name": "last_smith:roukanken",
+  "properties": {
+    "attack_base": 11.0,
+    "max_damage": 70,
+    "slash_art": "last_smith:transmigration_slash",
+    "special_effects": [
+      "last_smith:extra_sharpness"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "rninja",
+    "model": "last_smith:model/named/roukan/model.obj",
+    "summon_sword_color": 16758725,
+    "texture": "last_smith:model/named/roukan/texture.png"
+  }
+}

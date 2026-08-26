@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sagaquoia": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_wood_kiwami"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "last_smith:sagaquoia"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sagaquoia"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "last_smith:sagaquoia"
+    ]
+  }
+}

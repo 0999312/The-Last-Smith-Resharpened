@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "has_wood": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade_wood"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "last_smith:textures/advancements/backgrounds.png",
+    "description": {
+      "translate": "advancement.last_smith.root.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "last_smith:scroll_wood_basic"
+    },
+    "title": {
+      "translate": "advancement.last_smith.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_wood"
+    ]
+  ]
+}

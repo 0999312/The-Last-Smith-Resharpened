@@ -1,0 +1,32 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:unbreaking",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:power"
+    },
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 2
+    }
+  ],
+  "name": "last_smith:oboro_muramasa",
+  "properties": {
+    "attack_base": 11.0,
+    "max_damage": 70,
+    "slash_art": "slashblade:void_slash",
+    "special_effects": [
+      "last_smith:extra_power"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "model": "last_smith:model/named/smith/model.obj",
+    "texture": "last_smith:model/named/muramasa/texture_oboro.png"
+  }
+}

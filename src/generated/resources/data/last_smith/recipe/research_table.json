@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "F": {
+      "tag": "minecraft:wooden_fences"
+    },
+    "I": {
+      "tag": "c:dyes/black"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "P I",
+    "AAA",
+    "F F"
+  ],
+  "result": {
+    "count": 1,
+    "id": "last_smith:research_table"
+  }
+}

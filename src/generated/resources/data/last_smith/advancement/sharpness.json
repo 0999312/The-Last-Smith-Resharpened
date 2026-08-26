@@ -1,0 +1,35 @@
+{
+  "parent": "last_smith:oboro_muramasa",
+  "criteria": {
+    "has_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_sharpness"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.sharpness.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "last_smith:scroll_sharpness"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.last_smith.sharpness.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_blade"
+    ]
+  ]
+}

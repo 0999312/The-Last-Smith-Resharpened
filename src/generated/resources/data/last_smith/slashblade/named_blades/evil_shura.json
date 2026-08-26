@@ -1,0 +1,34 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:power",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:looting"
+    }
+  ],
+  "name": "last_smith:evil_shura",
+  "properties": {
+    "attack_base": 8.0,
+    "max_damage": 70,
+    "slash_art": "slashblade:wave_edge",
+    "special_effects": [
+      "last_smith:extra_power"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "ninja",
+    "model": "last_smith:model/named/sakura/model.obj",
+    "summon_sword_color": 7012352,
+    "texture": "last_smith:model/named/sakura/texture_4.png"
+  }
+}

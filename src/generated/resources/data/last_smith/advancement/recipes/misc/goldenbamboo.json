@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_goldenbamboo": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_sakura_full"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "last_smith:goldenbamboo"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_goldenbamboo"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "last_smith:goldenbamboo"
+    ]
+  }
+}

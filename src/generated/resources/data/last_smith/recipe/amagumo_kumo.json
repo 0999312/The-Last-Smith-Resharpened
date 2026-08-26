@@ -1,0 +1,21 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "minecraft:feather"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "kill": 500,
+      "name": "last_smith:nagasada",
+      "refine": 10
+    }
+  },
+  "blade": "last_smith:amagumo_kumo",
+  "template": {
+    "item": "last_smith:scroll_bewitched"
+  }
+}

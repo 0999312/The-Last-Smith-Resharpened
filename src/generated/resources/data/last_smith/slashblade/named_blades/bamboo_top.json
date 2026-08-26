@@ -1,0 +1,11 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "name": "last_smith:bamboo_top",
+  "properties": {
+    "max_damage": 70
+  },
+  "render": {
+    "carry_type": "default",
+    "texture": "last_smith:model/named/bamboolight/bamboo_top.png"
+  }
+}

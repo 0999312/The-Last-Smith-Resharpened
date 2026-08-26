@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "last_smith:item/blade_unfinished_1"
+  }
+}

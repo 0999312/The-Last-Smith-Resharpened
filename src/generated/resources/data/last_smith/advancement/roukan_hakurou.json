@@ -1,0 +1,93 @@
+{
+  "parent": "last_smith:exorcism_sakura",
+  "criteria": {
+    "hakurouken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:hakurouken"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roukanken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:roukanken"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.roukan_hakurou.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "components": {
+        "minecraft:enchantments": {
+          "levels": {
+            "minecraft:sharpness": 3
+          }
+        },
+        "minecraft:max_damage": 70,
+        "minecraft:rarity": "epic",
+        "slashblade:blade_state": {
+          "adjust": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseAttackModifier": 11.0,
+          "broken": false,
+          "carryType": "rninja",
+          "comboRoot": "slashblade:standby",
+          "defaultBewitched": true,
+          "effectColor": -18491,
+          "effectColorInverse": false,
+          "killCount": 0,
+          "model": "last_smith:model/named/roukan/model.obj",
+          "proudSoul": 0,
+          "refine": 0,
+          "sealed": false,
+          "slashArtsKey": "last_smith:transmigration_slash",
+          "specialEffects": [
+            "last_smith:extra_sharpness"
+          ],
+          "texture": "last_smith:model/named/roukan/texture.png",
+          "translationKey": "item.last_smith.roukanken"
+        }
+      },
+      "count": 1,
+      "id": "slashblade:slashblade"
+    },
+    "title": {
+      "translate": "advancement.last_smith.roukan_hakurou.title"
+    }
+  },
+  "requirements": [
+    [
+      "roukanken",
+      "hakurouken"
+    ]
+  ]
+}

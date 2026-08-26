@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "last_smith:blade_sakura_unfinished_1"
+    },
+    {
+      "item": "last_smith:yakibatsuchi"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "last_smith:blade_sakura_unfinished_2"
+  }
+}

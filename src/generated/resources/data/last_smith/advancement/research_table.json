@@ -1,0 +1,33 @@
+{
+  "parent": "last_smith:root",
+  "criteria": {
+    "has_table": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:research_table"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.research_table.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "last_smith:research_table"
+    },
+    "title": {
+      "translate": "advancement.last_smith.research_table.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_table"
+    ]
+  ]
+}

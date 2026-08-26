@@ -1,0 +1,13 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:sakura"
+  },
+  "base": {
+    "item": "slashblade:slashblade_silverbamboo"
+  },
+  "blade": "last_smith:silverbamboo_top",
+  "template": {
+    "item": "last_smith:scroll_wood_basic"
+  }
+}

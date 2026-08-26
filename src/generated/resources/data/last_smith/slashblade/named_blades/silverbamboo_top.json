@@ -1,0 +1,13 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "name": "last_smith:silverbamboo_top",
+  "properties": {
+    "attack_base": 5.0,
+    "max_damage": 70
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "slashblade:model/named/yamato.obj",
+    "texture": "last_smith:model/named/bamboolight/silverbamboo_top.png"
+  }
+}

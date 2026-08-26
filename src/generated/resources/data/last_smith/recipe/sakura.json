@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "slashblade:proudsoul_tiny"
+    },
+    {
+      "tag": "c:leaves/cherry"
+    },
+    {
+      "tag": "c:leaves/cherry"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "last_smith:sakura"
+  }
+}

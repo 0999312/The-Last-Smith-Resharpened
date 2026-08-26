@@ -1,0 +1,15 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "name": "last_smith:kusabimaru",
+  "properties": {
+    "attack_base": 5.0,
+    "max_damage": 70,
+    "slash_art": "last_smith:iai_cross"
+  },
+  "render": {
+    "carry_type": "katana",
+    "model": "last_smith:model/named/sekiro/kusabimaru.obj",
+    "summon_sword_color": -289357632,
+    "texture": "last_smith:model/named/sekiro/kusabimaru.png"
+  }
+}

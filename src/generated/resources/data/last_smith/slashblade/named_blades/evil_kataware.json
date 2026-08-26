@@ -1,0 +1,30 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:power",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:sharpness"
+    }
+  ],
+  "name": "last_smith:evil_kataware",
+  "properties": {
+    "attack_base": 6.0,
+    "max_damage": 70,
+    "slash_art": "slashblade:circle_slash",
+    "special_effects": [
+      "last_smith:extra_power"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "ninja",
+    "model": "last_smith:model/named/sakura/model.obj",
+    "summon_sword_color": 10027008,
+    "texture": "last_smith:model/named/sakura/texture_3.png"
+  }
+}

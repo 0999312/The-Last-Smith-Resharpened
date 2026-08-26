@@ -1,0 +1,84 @@
+{
+  "parent": "last_smith:nagasada",
+  "criteria": {
+    "has_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:amagumo_munin"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.munin.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "components": {
+        "minecraft:enchantments": {
+          "levels": {
+            "minecraft:feather_falling": 4,
+            "minecraft:power": 5,
+            "minecraft:sharpness": 5,
+            "minecraft:soul_speed": 2,
+            "minecraft:sweeping_edge": 3,
+            "minecraft:unbreaking": 3
+          }
+        },
+        "minecraft:max_damage": 100,
+        "minecraft:rarity": "epic",
+        "slashblade:blade_state": {
+          "adjust": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseAttackModifier": 17.0,
+          "broken": false,
+          "carryType": "default",
+          "comboRoot": "slashblade:standby",
+          "defaultBewitched": true,
+          "effectColor": -61167,
+          "effectColorInverse": false,
+          "killCount": 0,
+          "model": "last_smith:model/named/smith/model.obj",
+          "proudSoul": 0,
+          "refine": 0,
+          "sealed": false,
+          "slashArtsKey": "slashblade:void_slash",
+          "specialEffects": [
+            "last_smith:extreme_sharpness",
+            "last_smith:bewitched_power",
+            "last_smith:extra_smite",
+            "slashblade:wither_edge"
+          ],
+          "texture": "last_smith:model/named/smith/texture_final.png",
+          "translationKey": "item.last_smith.amagumo_munin"
+        }
+      },
+      "count": 1,
+      "id": "slashblade:slashblade"
+    },
+    "title": {
+      "translate": "advancement.last_smith.munin.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_blade"
+    ]
+  ]
+}

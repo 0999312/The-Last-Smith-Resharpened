@@ -1,0 +1,21 @@
+{
+  "type": "last_smith:research",
+  "blade": {
+    "item": "slashblade:slashblade_white"
+  },
+  "ink": [
+    {
+      "item": "minecraft:ink_sac"
+    },
+    {
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "id": "last_smith:scroll_blade"
+  },
+  "paper": {
+    "item": "minecraft:paper"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:smite",
+      "lvl": 3
+    },
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 3
+    },
+    {
+      "id": "minecraft:unbreaking",
+      "lvl": 3
+    }
+  ],
+  "name": "last_smith:sagequoia",
+  "properties": {
+    "attack_base": 6.0,
+    "max_damage": 113,
+    "slash_art": "slashblade:wave_edge",
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "last_smith:model/named/sagequoia/model.obj",
+    "texture": "last_smith:model/named/sagequoia/texture.png"
+  }
+}

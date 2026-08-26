@@ -1,0 +1,24 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 2
+    }
+  ],
+  "name": "last_smith:sakuragiri",
+  "properties": {
+    "attack_base": 2.0,
+    "max_damage": 70,
+    "slash_art": "slashblade:drive_vertical",
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "last_smith:model/named/bot_roukan/model.obj",
+    "summon_sword_color": 16758725,
+    "texture": "last_smith:model/named/bot_roukan/texture.png"
+  }
+}

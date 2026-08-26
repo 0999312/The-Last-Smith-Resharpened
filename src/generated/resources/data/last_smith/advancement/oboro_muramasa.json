@@ -1,0 +1,77 @@
+{
+  "parent": "last_smith:scroll_muramasa",
+  "criteria": {
+    "has_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:oboro_muramasa"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.oboro_muramasa.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "components": {
+        "minecraft:enchantments": {
+          "levels": {
+            "minecraft:power": 1,
+            "minecraft:sharpness": 2,
+            "minecraft:unbreaking": 2
+          }
+        },
+        "minecraft:max_damage": 70,
+        "minecraft:rarity": "epic",
+        "slashblade:blade_state": {
+          "adjust": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseAttackModifier": 11.0,
+          "broken": false,
+          "carryType": "pso2",
+          "comboRoot": "slashblade:standby",
+          "defaultBewitched": true,
+          "effectColor": -13421569,
+          "effectColorInverse": false,
+          "killCount": 0,
+          "model": "last_smith:model/named/smith/model.obj",
+          "proudSoul": 0,
+          "refine": 0,
+          "sealed": false,
+          "slashArtsKey": "slashblade:void_slash",
+          "specialEffects": [
+            "last_smith:extra_power"
+          ],
+          "texture": "last_smith:model/named/muramasa/texture_oboro.png",
+          "translationKey": "item.last_smith.oboro_muramasa"
+        }
+      },
+      "count": 1,
+      "id": "slashblade:slashblade"
+    },
+    "title": {
+      "translate": "advancement.last_smith.oboro_muramasa.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_blade"
+    ]
+  ]
+}

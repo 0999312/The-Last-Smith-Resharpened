@@ -1,0 +1,34 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:sakura_full"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "enchantments": [
+        {
+          "id": "minecraft:sharpness"
+        },
+        {
+          "id": "minecraft:sweeping_edge"
+        }
+      ],
+      "kill": 1000,
+      "name": "last_smith:nameless_odachi",
+      "refine": 10
+    }
+  },
+  "blade": "last_smith:fushigiri",
+  "template": [
+    {
+      "item": "last_smith:scroll_blood"
+    },
+    {
+      "item": "last_smith:scroll_shura"
+    }
+  ]
+}

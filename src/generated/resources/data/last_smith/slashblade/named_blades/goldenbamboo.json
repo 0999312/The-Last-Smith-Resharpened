@@ -1,0 +1,35 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:soul_speed",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:power"
+    },
+    {
+      "id": "minecraft:unbreaking"
+    },
+    {
+      "id": "minecraft:smite",
+      "lvl": 3
+    }
+  ],
+  "name": "last_smith:goldenbamboo",
+  "properties": {
+    "attack_base": 6.0,
+    "max_damage": 33,
+    "special_effects": [
+      "last_smith:extra_power"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "slashblade:model/named/yamato.obj",
+    "texture": "last_smith:model/named/bamboolight/goldenbamboo.png"
+  }
+}

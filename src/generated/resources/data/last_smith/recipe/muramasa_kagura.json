@@ -1,0 +1,21 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "slashblade:proudsoul_sphere"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "name": "last_smith:nameless_odachi",
+      "proud_soul": 1000,
+      "refine": 10
+    }
+  },
+  "blade": "last_smith:muramasa_kagura",
+  "template": {
+    "item": "last_smith:scroll_muramasa"
+  }
+}

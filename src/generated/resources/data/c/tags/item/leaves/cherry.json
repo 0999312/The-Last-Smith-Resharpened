@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:cherry_leaves",
+    {
+      "id": "sakura:sakuraleaves",
+      "required": false
+    }
+  ]
+}

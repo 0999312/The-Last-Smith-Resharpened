@@ -1,0 +1,33 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:soul_speed",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:power",
+      "lvl": 5
+    },
+    {
+      "id": "minecraft:feather_falling",
+      "lvl": 4
+    }
+  ],
+  "name": "last_smith:yamato_neo",
+  "properties": {
+    "attack_base": 9.0,
+    "special_effects": [
+      "last_smith:extra_power",
+      "last_smith:extra_sharpness"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "last_smith:model/named/yamato_neo/yamato_neo.obj",
+    "texture": "last_smith:model/named/yamato_neo/yamato_neo.png"
+  }
+}

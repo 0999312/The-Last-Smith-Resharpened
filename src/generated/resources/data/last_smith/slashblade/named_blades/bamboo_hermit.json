@@ -1,0 +1,30 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:unbreaking",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:power"
+    },
+    {
+      "id": "minecraft:smite",
+      "lvl": 2
+    }
+  ],
+  "name": "last_smith:bamboo_hermit",
+  "properties": {
+    "attack_base": 6.0,
+    "max_damage": 75,
+    "slash_art": "slashblade:void_slash",
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "default",
+    "model": "slashblade:model/named/yamato.obj",
+    "texture": "last_smith:model/named/bamboolight/bamboo_top.png"
+  }
+}

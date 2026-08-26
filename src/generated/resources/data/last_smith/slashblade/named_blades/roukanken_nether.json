@@ -1,0 +1,35 @@
+{
+  "creativeGroup": "last_smith:slashblade",
+  "enchantments": [
+    {
+      "id": "minecraft:sharpness",
+      "lvl": 4
+    },
+    {
+      "id": "minecraft:power",
+      "lvl": 2
+    },
+    {
+      "id": "minecraft:fire_aspect"
+    }
+  ],
+  "name": "last_smith:roukanken_nether",
+  "properties": {
+    "attack_base": 13.0,
+    "max_damage": 70,
+    "slash_art": "last_smith:transmigration_slash",
+    "special_effects": [
+      "last_smith:extreme_sharpness",
+      "slashblade:wither_edge"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "rninja",
+    "model": "last_smith:model/named/roukan/model.obj",
+    "summon_sword_color": 16758725,
+    "texture": "last_smith:model/named/roukan/texture_tx.png"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:sakura_sphere"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "kill": 230,
+      "name": "slashblade:tagayasan",
+      "refine": 10
+    }
+  },
+  "blade": "last_smith:sagequoia",
+  "template": {
+    "item": "last_smith:scroll_wood_kiwami"
+  }
+}

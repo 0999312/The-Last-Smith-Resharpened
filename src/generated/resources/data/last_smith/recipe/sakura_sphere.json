@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "last_smith:sakura_steel_ingot"
+  },
+  "result": {
+    "count": 1,
+    "id": "last_smith:sakura_sphere"
+  }
+}
