@@ -132,6 +132,7 @@
   "last_smith.jei.cauldron": "Cauldron Quenching",
   "last_smith.jei.cauldron_need_water": "Need some water in the cauldron.",
   "last_smith.jei.research": "Researching",
+  "message.last_smith.cauldron_empty": "You need to have water in the pot when quenching.",
   "se.last_smith.bewitched_power": "Bewitched Power",
   "se.last_smith.extra_power": "Spirit Power",
   "se.last_smith.extra_sharpness": "Spirit Sharpness",

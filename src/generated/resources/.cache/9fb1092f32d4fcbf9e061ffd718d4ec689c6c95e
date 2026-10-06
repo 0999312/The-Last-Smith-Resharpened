@@ -1,4 +1,4 @@
-// 1.21.1	2026-08-15T17:24:46.7963266	Recipes
+// 1.21.1	2026-09-20T18:13:25.3737521	Recipes
 ad0c8a31be9bea7f9d225d194223b3a29de097b5 data/last_smith/advancement/recipes/combat/eievui.json
 51860e0c116d1999acfd462bb352bb52502f5da3 data/last_smith/advancement/recipes/combat/oboro_muramasa.json
 6b9572a55eb5890fba23b986e3117b74ec211d6a data/last_smith/advancement/recipes/combat/sweapon.json
@@ -188,6 +188,6 @@ aefdf377df6fb00fa3273e05ac46acf674a2c426 data/last_smith/recipe/yamato_full.json
 a279c1c6e3696f64ad1397a9db58228f69502fac data/slashblade/advancement/recipes/misc/slashblade_bamboo.json
 0f172fe25fbcd9a074803d10d7a2f9a4a4c0c52d data/slashblade/advancement/recipes/misc/slashblade_white.json
 a5472e68e2e1c83de5f52dcbc46e6bfe8b155772 data/slashblade/recipe/ruby.json
-40f3c05b7d4709115f4ac0a5410c608894d9596a data/slashblade/recipe/slashblade.json
+d569cb3a5b16663aa16a8ca8a22c358f67bed615 data/slashblade/recipe/slashblade.json
 e69c7dc3c2c01ac8b35a9be41b16257c387c92f1 data/slashblade/recipe/slashblade_bamboo.json
 0bfd8558df895a937d28af62c574c5c35689c917 data/slashblade/recipe/slashblade_white.json

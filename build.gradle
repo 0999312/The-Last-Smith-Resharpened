@@ -8,7 +8,7 @@ plugins {
 }
 
 processResources {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE  //  值为 WARN（警告） 或 INCLUDE（保留） 或 EXCLUDE（排除） 或 FAIL（失败）
+    duplicatesStrategy = DuplicatesStrategy.WARN  //  值为 WARN（警告） 或 INCLUDE（保留） 或 EXCLUDE（排除） 或 FAIL（失败）
     doFirst {
         println "Duplicates strategy: ${duplicatesStrategy}"
     }
@@ -127,10 +127,15 @@ dependencies {
 
     compileOnly "maven.modrinth:patchouli:1.21.1-93-neoforge"
 
-//    暂时找不到包
-//    compileOnly "cn.mmf.slashblade_addon:slashblade_addon-${minecraft_version}:${sjap_version}"
-//    compileOnly "net.tracen.blades_derby:blades_derby-${minecraft_version}:${derby_version}"
-//    compileOnly "cn.mmf.energyblades:energyblade-${minecraft_version}:${energy_blade_version}"
+    // 2026-10-06添加：sjap、derby、energyblade联动所需依赖
+
+    // 马娘联动
+    compileOnly "curse.maven:blades-derby-1232462:8072667"
+    // 高频刀（HF Blade）联动
+    compileOnly "curse.maven:slashblade-hf-blade-1299888:8073054"
+    // 日系附属包（sjap）联动
+    compileOnly "curse.maven:sjap-310187:8072663"
+
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -171,6 +176,17 @@ tasks.named('jar', Jar).configure {
 
 java {
     withSourcesJar()
+}
+
+// 2026-10-06:15-40 The datagen output dir (src/generated/resources) is added to the main source set, so the
+// :sourcesJar task packages both it and src/main/resources. When the same file exists in both roots the archive
+// task aborts with "is a duplicate but no duplicate handling strategy has been set". Give it an explicit strategy.
+// Must be configured after withSourcesJar() so the task exists.
+// 2026-10-06:15-40 datagen 输出目录（src/generated/resources）被加入了 main source set，导致 :sourcesJar 同时打包它
+// 与 src/main/resources。当同一文件同时存在于两个根目录时，归档任务会以“存在重复项但未设置重复处理策略”而中止。
+// 这里为其显式指定处理策略。必须在 withSourcesJar() 之后配置，以确保该任务已存在。
+tasks.named('sourcesJar', Jar).configure {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 publishing {

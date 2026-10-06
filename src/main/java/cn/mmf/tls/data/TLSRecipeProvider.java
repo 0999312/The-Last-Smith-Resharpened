@@ -388,7 +388,13 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
         addBladeSmithingCover(consumer, "slashblade",
                 bladeItem(SCROLL_BLADE.get()),
                 simpleBase(SLASHBLADE_WHITE.get()),
-                namedBladeBase(SLASHBLADE_SILVERBAMBOO.getId(), req().name(ResourceLocation.fromNamespaceAndPath(SlashBlade.MODID, "slashblade_silverbamboo")).addSwordType(SwordType.BROKEN).build()),
+                // 2026-09-20:18-05 Fixed: the addition wrongly used the named-blade item (slashblade:slashblade) with a
+                // non-existent definition name, so the survival-obtainable broken "slashblade:slashblade_silverbamboo"
+                // could never match. Use the real broken silver bamboo item, same as slashblade_from_bamboolight.
+                // 2026-09-20:18-05 修复：附加材料误用了名刀物品（slashblade:slashblade）并指定了一个并不存在的刀定义名，
+                // 导致生存可获得的折断银纸竹光（slashblade:slashblade_silverbamboo）无法匹配。改为与另一配方一致，
+                // 使用真正的折断银纸竹光物品。
+                namedBladeBase(null, req().addSwordType(SwordType.BROKEN).build(), SLASHBLADE_SILVERBAMBOO.get()),
                 SlashBladeItems.SLASHBLADE.getId());
         addBladeSmithingCover(consumer, "ruby",
                 bladeItem(SCROLL_KATANA.get()),

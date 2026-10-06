@@ -38,7 +38,13 @@ public record TLSResearchRecipe(ItemStack output, Ingredient blade, Ingredient p
 
     @Override
     public @NotNull ItemStack assemble(@NotNull TLSResearchRecipeInput input, HolderLookup.@NotNull Provider registries) {
-        return this.getResultItem(registries);
+        // 2026-09-20:17-47 Fixed: the recipe broke once the crafted note was moved into the player inventory.
+        // Returning the shared output stack made the result slot, the recipe and the inventory reference the same
+        // ItemStack, so merging/picking it up in the inventory zeroed the recipe output. Vanilla assemble() always
+        // returns a copy (see ShapedRecipe / AbstractCookingRecipe).
+        // 2026-09-20:17-47 修复：合成出的笔记放入背包后配方失效。直接返回共享的 output 会导致结果槽、配方与背包
+        // 引用同一个 ItemStack，在背包中合并/拾取时会把该引用的数量清零。原版 assemble() 始终返回副本。
+        return this.getResultItem(registries).copy();
     }
 
     @Override

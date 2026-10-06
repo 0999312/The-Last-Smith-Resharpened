@@ -23,7 +23,6 @@ run
 run-data
 src/generated/resources/.cache
 
-<<<<<<< HEAD
 # docs
 Documents
 libs
@@ -31,4 +30,3 @@ libs
 =======
 # Files from Forge MDK
 forge*changelog.txt
->>>>>>> upstream/1.21.1

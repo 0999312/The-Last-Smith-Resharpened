@@ -9,10 +9,9 @@
   "addition": {
     "type": "slashblade:blade",
     "items": [
-      "slashblade:slashblade"
+      "slashblade:slashblade_silverbamboo"
     ],
     "request": {
-      "name": "slashblade:slashblade_silverbamboo",
       "sword_type": [
         "broken"
       ]

@@ -27,6 +27,12 @@ public class TLSLangProvider extends AbstractLangProvider {
 		add("last_smith.jei.cauldron", "Cauldron Quenching");
 		add("last_smith.jei.cauldron_need_water", "Need some water in the cauldron.");
 
+		// 2026-10-06:15-40 Migrated out of the hand-written src/main/resources lang file, whose duplicate copy is
+		// being removed so the generated lang file becomes the single source of truth.
+		// 2026-10-06:15-40 从手工维护的 src/main/resources 语言文件迁移而来，该重复文件将被移除，使生成的
+		// 语言文件成为唯一来源。
+		add("message.last_smith.cauldron_empty", "You need to have water in the pot when quenching.");
+
 		add("guide.smith_guide.title", "The Way of Bewitched Blade");
 		add("guide.smith_guide.landing_text", "This book records many ancient stories...");
 		add("guide.smith_guide.subtitle", "The Bewitched Power and The Extreme Sharpness.");
