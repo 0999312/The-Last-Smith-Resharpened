@@ -27,6 +27,11 @@ public class TLSLangProvider extends AbstractLangProvider {
 		add("last_smith.jei.cauldron", "Cauldron Quenching");
 		add("last_smith.jei.cauldron_need_water", "Need some water in the cauldron.");
 
+		// 2026-10-06:18-20 EMI recipe category names (follow the EMI compat).
+		// 2026-10-06:18-20 EMI 配方分类名称（跟随 EMI 兼容）。
+		add("emi.category.last_smith.research", "Researching");
+		add("emi.category.last_smith.cauldron", "Cauldron Quenching");
+
 		// 2026-10-06:15-40 Migrated out of the hand-written src/main/resources lang file, whose duplicate copy is
 		// being removed so the generated lang file becomes the single source of truth.
 		// 2026-10-06:15-40 从手工维护的 src/main/resources 语言文件迁移而来，该重复文件将被移除，使生成的
@@ -161,8 +166,22 @@ public class TLSLangProvider extends AbstractLangProvider {
 		add("slash_art.last_smith.fushigiri", "Mortal Draw");
 		add("slash_art.last_smith.iai_cross", "Ashina Cross");
 		add("slash_art.last_smith.sakura_blistering_swords", "Sakura -Blistering-");
+
+		// 2026-10-06:19-00 Slash-art effect descriptions.
+		// 2026-10-06:19-00 斩击技效果描述。
+		add("slash_art.last_smith.transmigration_slash.desc", "Unleashes the odachi combo.");
+		add("slash_art.last_smith.fushigiri.desc", "Unleashes the Mortal Blade.");
+		add("slash_art.last_smith.iai_cross.desc", "A cross-drawn iai slash.");
+		add("slash_art.last_smith.sakura_blistering_swords.desc", "Summons sakura flying blades.");
 		
-		// TODO: addEnchantment - Enchantment is final in 1.21.1
+		// 2026-10-06:16-30 Enchantment is data-driven in 1.21.1; add the enchantment name keys manually.
+		// 2026-10-06:16-30 1.21.1 附魔为数据驱动，手动添加附魔名称翻译键。
+		add("enchantment.last_smith.spirit_slash", "Spirit Slash");
+		add("enchantment.last_smith.spirit_absorption", "Spirit Absorption");
+		// 2026-10-06:17-40 Effect descriptions shown in the item tooltip.
+		// 2026-10-06:17-40 物品提示中显示的效果描述。
+		add("enchantment.last_smith.spirit_slash.desc", "Kill count +%s on kill");
+		add("enchantment.last_smith.spirit_absorption.desc", "Proud soul gained +%s%%");
 		
 
 		addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_POWER.getId(), "Spirit Power");
@@ -173,6 +192,17 @@ public class TLSLangProvider extends AbstractLangProvider {
 		addSpecialEffect(TLSSpecialEffectRegistry.SMITE_SE.getId(), "Exorcism");
 		addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_SMITE.getId(), "Nirvana");
 		addSpecialEffect(TLSSpecialEffectRegistry.FUSHIGIRI_SE.getId(), "Fushigiri");
+
+		// 2026-10-06:19-00 Special-effect descriptions.
+		// 2026-10-06:19-00 特殊效果描述。
+		add("se.last_smith.extra_sharpness.desc", "Bonus damage per Sharpness level.");
+		add("se.last_smith.extreme_sharpness.desc", "Greater bonus damage per Sharpness level.");
+		add("se.last_smith.extra_power.desc", "Bonus damage per Power level.");
+		add("se.last_smith.bewitched_power.desc", "Greater bonus damage per Power level.");
+		add("se.last_smith.smite_se.desc", "Bonus damage to undead per Smite level.");
+		add("se.last_smith.extra_smite.desc", "Greater bonus damage to undead per Smite level.");
+		add("se.last_smith.fushigiri_se.desc", "Greatest bonus damage to undead per Smite level.");
+		add("se.last_smith.sectumsempra_se.desc", "Summoned swords deal extra damage on hit.");
 		
 		addItem(ItemRegistry.SAKURA, "Spirit Sakura Leaf");
         addItem(ItemRegistry.SAKURA_FULL, "Spirit Sakura");

@@ -48,7 +48,9 @@ public class SectumsempraSE extends SpecialEffect {
     private static boolean doSectumsempra(ISlashBladeState state, ServerPlayer player, Entity target, EntityAbstractSummonedSword summonedSword) {
         if (!state.hasSpecialEffect(TLSSpecialEffectRegistry.SECTUMSEMPRA_SE.getId())) return false;
         int level = player.experienceLevel;
-        if (!SpecialEffect.isEffective(TLSSpecialEffectRegistry.SECTUMSEMPRA_SE.get(), level)) return false;
+        // 2026-10-06:18-55 Level requirement is now read from Config.
+        // 2026-10-06:18-55 生效等级改为从 Config 读取。
+        if (level < cn.mmf.tls.Config.sectumsempraRequestLevel) return false;
 
         ServerLevel serverLevel = player.serverLevel();
         Vec3 startPos = player.position();
@@ -61,11 +63,14 @@ public class SectumsempraSE extends SpecialEffect {
             summonedSword.getPersistentData().putBoolean(SECTUMSEMPRA_BOOSTED, true);
             summonedSword.setDamage(summonedSword.getDamage() + 1.0f);
             if (target instanceof LivingEntity living) {
-                float extraDamage1 = living.getHealth() * 0.04f + 1f;
+                // 2026-10-06:18-55 Damage values are now read from Config.
+                // 2026-10-06:18-55 伤害数值改为从 Config 读取。
+                float flat = (float) cn.mmf.tls.Config.sectumsempraFlatDamage;
+                float extraDamage1 = living.getHealth() * (float) cn.mmf.tls.Config.sectumsempraHealthRatio + flat;
                 living.invulnerableTime = 0;
                 living.hurt(player.damageSources().indirectMagic(summonedSword, player), extraDamage1);
 
-                float extraDamage2 = 1f;
+                float extraDamage2 = flat;
                 living.invulnerableTime = 0;
                 living.hurt(player.damageSources().indirectMagic(summonedSword, player), extraDamage2);
             }

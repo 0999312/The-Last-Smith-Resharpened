@@ -136,6 +136,7 @@ dependencies {
     // 日系附属包（sjap）联动
     compileOnly "curse.maven:sjap-310187:8072663"
 
+    compileOnly "curse.maven:emi-580555:8081408"
 }
 
 tasks.named('processResources', ProcessResources).configure {

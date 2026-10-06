@@ -12,8 +12,10 @@ import cn.mmf.tls.se.TLSSpecialEffectRegistry;
 import cn.mmf.tls.slasharts.TLSSlashArtsRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.slf4j.Logger;
 
@@ -26,7 +28,11 @@ public class TheLastSmith {
         return ResourceLocation.fromNamespaceAndPath(MODID, path);
     }
 
-    public TheLastSmith(IEventBus modEventBus) {
+    public TheLastSmith(IEventBus modEventBus, ModContainer modContainer) {
+        // 2026-10-06:17-40 Register the common config (enchantment effect values).
+        // 2026-10-06:17-40 注册公共配置（附魔效果数值）。
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
         ItemRegistry.ITEMS.register(modEventBus);
         BlockRegistry.BLOCKS.register(modEventBus);
         TLSCreativeGroup.CREATIVE_MODE_TABS.register(modEventBus);
@@ -41,7 +47,12 @@ public class TheLastSmith {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        // 2026-10-06:17-40 Only load the energyblade (HF Blade) handler class when the mod is present,
+        // so a missing optional mod never affects the rest of the mod.
+        // 2026-10-06:17-40 仅在 energyblade（HF Blade）存在时才加载其处理类，
+        // 未安装该可选模组时不会影响其余功能。
         if (ModList.get().isLoaded("energyblade")) {
+            HFBladeEventsHandler.INSTANCE.init();
         }
     }
 

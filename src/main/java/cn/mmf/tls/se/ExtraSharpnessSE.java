@@ -35,12 +35,19 @@ public class ExtraSharpnessSE extends SpecialEffect {
 
             int level = player.experienceLevel;
 
-            if(SpecialEffect.isEffective(se.get(), level)) {
+            // 2026-10-06:18-55 Level requirement and bonus are now read from Config.
+            // 2026-10-06:18-55 生效等级与加成改为从 Config 读取。
+            boolean extreme = se.get() == TLSSpecialEffectRegistry.EXTREME_SHARPNESS.get();
+            int requestLevel = extreme ? cn.mmf.tls.Config.extremeSharpnessRequestLevel
+                    : cn.mmf.tls.Config.extraSharpnessRequestLevel;
+            if (level >= requestLevel) {
+                float bonus = (float) (extreme ? cn.mmf.tls.Config.extremeSharpnessBonus
+                        : cn.mmf.tls.Config.extraSharpnessBonus);
                 event.setDamage(event.getDamage() * 
                         1 + (event.getBlade().getEnchantmentLevel(player.level().registryAccess()
                                 .lookupOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT)
                                 .getOrThrow(Enchantments.SHARPNESS)) 
-                                * se.get().getSELevel() * 0.1F));
+                                * bonus));
             }
         }
     }

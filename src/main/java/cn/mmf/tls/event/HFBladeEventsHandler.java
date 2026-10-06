@@ -1,29 +1,29 @@
 package cn.mmf.tls.event;
 
-// TODO: energyblade 1.21.1 version not available yet - re-enable when available
-// import cn.mmf.energyblade.EmpowerSlashBladeEvent;
+import cn.mmf.energyblade.EmpowerSlashBladeEvent;
 import cn.mmf.tls.TheLastSmith;
-// import cn.mmf.tls.data.builtin.TLSSlashBladeRegistry;
-// import mods.flammpfeil.slashblade.capability.slashblade.BladeStateAccess;
-// import net.minecraft.Util;
-// import net.neoforged.bus.api.SubscribeEvent;
-// import net.neoforged.neoforge.common.NeoForge;
+import cn.mmf.tls.data.builtin.TLSSlashBladeRegistry;
+import net.minecraft.Util;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.common.NeoForge;
 
-
+/**
+ * 2026-10-06:17-40 Re-enabled for 1.21.1 (energyblade 2.1.7 is now available).
+ * Only load this class when the energyblade mod is present (see TheLastSmith#setup).
+ * 2026-10-06:17-40 已针对 1.21.1 重新启用（energyblade 2.1.7 现已可用）。
+ * 仅在 energyblade 模组存在时才加载本类（见 TheLastSmith#setup）。
+ */
 public enum HFBladeEventsHandler {
     INSTANCE;
 
     public void init() {
-        // TODO: Re-enable when energyblade 1.21.1 is available
-        // NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(this);
     }
 
-    // TODO: Re-enable when energyblade 1.21.1 is available
-    /*
     @SubscribeEvent
     public void onSlashBladeUpdate(EmpowerSlashBladeEvent event) {
         var state = event.getSlashBladeState();
-        if(!state.getTranslationKey().equals(Util.makeDescriptionId("item", TLSSlashBladeRegistry.BUNSHI.location()))) {
+        if (!state.getTranslationKey().equals(Util.makeDescriptionId("item", TLSSlashBladeRegistry.BUNSHI.location()))) {
             return;
         }
         var offTexture = TheLastSmith.prefix("model/named/rf_roukan/texture.png");
@@ -36,5 +36,4 @@ public enum HFBladeEventsHandler {
             state.setBaseAttackModifier(6F);
         }
     }
-    */
 }

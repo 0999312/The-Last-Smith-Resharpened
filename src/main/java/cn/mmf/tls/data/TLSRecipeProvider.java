@@ -105,7 +105,11 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
         addResearchRecipeCopy(consumer, "scroll_god_copy", SCROLL_GOD, SCROLL_GOD, 2);
 
         addResearchRecipe(consumer, "scroll_inferno_hakurouken", HAKUROUKEN_NETHER, SCROLL_HEIL);
-        // TODO scroll_inferno_nihilbx 似蛭，待添加
+        // 2026-10-06:17-40 SJAP collaboration research scroll (conditional on slashblade_addon).
+        // 2026-10-06:17-40 SJAP 联动研究残页（以 slashblade_addon 为条件）。
+        addResearchRecipeConditional(consumer, "slashblade_addon", "scroll_inferno_nihilbx",
+                SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "nihilbx")),
+                SCROLL_HEIL);
         addResearchRecipe(consumer, "scroll_inferno_roukanken", ROUKANKEN_NETHER, SCROLL_HEIL);
 
         // 2026-06-13:17-38 Fixed: use blankNameless() to only match un-named blades, preventing conflict with named blade recipes
@@ -133,9 +137,22 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
                 SlashBladeIngredient.of(SlashBladeBuiltInRegistry.RODAI_NETHERITE.location())
         ), SCROLL_NAMED);
         addResearchRecipeCopy(consumer, "scroll_named_copy", SCROLL_NAMED, SCROLL_NAMED, 2);
-        // TODO scroll_named_sjap 日系附属包名刀，待添加
+        // 2026-10-06:17-40 SJAP named-blade research scroll (conditional on slashblade_addon).
+        // 2026-10-06:17-40 SJAP 名刀研究残页（以 slashblade_addon 为条件）。
+        addResearchRecipeConditional(consumer, "slashblade_addon", "scroll_named_sjap",
+                CompoundIngredient.of(
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "blue")),
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "wanderer")),
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "tboen")),
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "katana")),
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "tachi")),
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "frost_wolf")),
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "frosty_cherry"))),
+                SCROLL_NAMED);
 
-        addResearchRecipe(consumer, "scroll_oboro_muarmasa", OBORO_MURAMASA, SCROLL_CAUSALITY);
+        // 2026-10-06:16-30 Fixed the research recipe id typo scroll_oboro_muarmasa -> scroll_oboro_muramasa.
+        // 2026-10-06:16-30 修正研究配方 ID 拼写：scroll_oboro_muarmasa -> scroll_oboro_muramasa。
+        addResearchRecipe(consumer, "scroll_oboro_muramasa", OBORO_MURAMASA, SCROLL_CAUSALITY);
         addResearchRecipeSetPaper(consumer, "scroll_odachi", SCROLL_BLADE, SCROLL_KATANA, SCROLL_ODACHI);
         addResearchRecipeCopy(consumer, "scroll_odachi_copy", SCROLL_ODACHI, SCROLL_ODACHI, 2);
 
@@ -158,7 +175,14 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
                 SlashBladeIngredient.of(SlashBladeBuiltInRegistry.OROTIAGITO.location())
         ), SCROLL_STAR);
         addResearchRecipeCopy(consumer, "scroll_star_copy", SCROLL_STAR, SCROLL_STAR, 2);
-        // TODO scroll_star_sjap 日系附属包星落者，待添加
+        // 2026-10-06:17-40 SJAP meteorn research scroll (conditional on slashblade_addon).
+        // 2026-10-06:17-40 SJAP 星落者研究残页（以 slashblade_addon 为条件）。
+        addResearchRecipeConditional(consumer, "slashblade_addon", "scroll_star_sjap",
+                CompoundIngredient.of(
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "snow_crow")),
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "murakumo")),
+                        SlashBladeIngredient.of(ResourceLocation.fromNamespaceAndPath("slashblade_addon", "dark_raven"))),
+                SCROLL_STAR);
 
         addResearchRecipe(consumer, "scroll_tengu_1", AMAGUMO_KAZE, SCROLL_TENGU_VOL1);
         addResearchRecipe(consumer, "scroll_tengu_2", AMAGUMO_KUMO, SCROLL_TENGU_VOL2);
@@ -215,6 +239,14 @@ public class TLSRecipeProvider extends AbstractRecipeProvider {
                 .researching(blade, result.asItem()).paper(paper)
                 .unlockedBy(getHasName(result.asItem()), has(result.asItem()))
                 .save(consumer, TheLastSmith.prefix("research/" + id));
+    }
+
+    // 2026-10-06:17-40 Wraps a research recipe in a mod_loaded condition for optional-mod compatibility.
+    // 2026-10-06:17-40 为研究配方附加 mod_loaded 条件，用于可选模组兼容。
+    private void addResearchRecipeConditional(RecipeOutput consumer, String modid, String id, Ingredient blade,
+                                              DeferredHolder<Item, Item> result) {
+        RecipeOutput output = consumer.withConditions(new ModLoadedCondition(modid));
+        addResearchRecipe(output, id, blade, result.get());
     }
 
     // ─── 2026-06-13:17-35 Smithing Transform Recipes (vanilla smithing table) ───

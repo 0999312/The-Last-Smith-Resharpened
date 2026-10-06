@@ -1,6 +1,6 @@
 {
    "name" : "「文始」",
-   "icon" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"last_smith:model/named/rf_roukan/model.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"last_smith:model/named/rf_roukan/texture_on.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.last_smith.bunshi\", refine: 0, specialEffects: []}]",
+   "icon" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"last_smith:model/named/rf_roukan/model.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"last_smith:model/named/rf_roukan/texture_on.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.energyblade.bunshi\", refine: 0, specialEffects: []}]",
    "category" : "last_smith:category_5",
    "pages" : [
       {
@@ -14,6 +14,6 @@
       }
    ],
    "advancement":"last_smith:roukan_hakurou",
-   "flag":"mod:energy_blade",
+   "flag":"mod:energyblade",
    "sortnum" : 4
 }

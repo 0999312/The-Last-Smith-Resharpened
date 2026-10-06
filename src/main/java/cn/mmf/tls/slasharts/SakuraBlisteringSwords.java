@@ -1,6 +1,6 @@
 package cn.mmf.tls.slasharts;
 
-import mods.flammpfeil.slashblade.SlashBlade;
+import mods.flammpfeil.slashblade.RegistryEvents;
 import mods.flammpfeil.slashblade.capability.concentrationrank.CapabilityConcentrationRank;
 import mods.flammpfeil.slashblade.capability.slashblade.BladeStateAccess;
 import mods.flammpfeil.slashblade.entity.EntityBlisteringSwords;
@@ -28,7 +28,11 @@ public class SakuraBlisteringSwords {
             int count = baseCount + rank;
 
             for (int i = 0; i < count; i++) {
-                EntityBlisteringSwords ss = new EntityBlisteringSwords(null ,
+                // 2026-10-06:17-10 Fixed NPE: the SlashBlade entity requires a registered EntityType,
+                // passing null crashed in Entity#<init>. Use RegistryEvents.BlisteringSwords.
+                // 2026-10-06:17-10 修复空指针：拔刀剑实体需要已注册的 EntityType，传入 null 会在 Entity 构造时崩溃，
+                // 改用 RegistryEvents.BlisteringSwords。
+                EntityBlisteringSwords ss = new EntityBlisteringSwords(RegistryEvents.BlisteringSwords,
                         worldIn);
 
                 ss.setPos(playerIn.position());

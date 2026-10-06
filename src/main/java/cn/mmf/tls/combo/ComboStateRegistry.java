@@ -6,6 +6,7 @@ import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.ability.StunManager;
 import mods.flammpfeil.slashblade.init.DefaultResources;
 import mods.flammpfeil.slashblade.registry.combo.ComboState;
+import mods.flammpfeil.slashblade.slasharts.JudgementCut;
 import mods.flammpfeil.slashblade.util.AttackManager;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -71,14 +72,14 @@ public class ComboStateRegistry {
                                             AttackManager.isPowered(entityIn) ? 1.6F : 1.1F))
                             .put(17, (entityIn) -> AttackManager.doSlash(entityIn, 40, true, true))
                             .put(19, (entityIn) -> AttackManager.doSlash(entityIn, 30, true, true))
+                            // 2026-10-06:18-45 Finisher: release the vanilla Judgement Cut (dimension slash).
+                            // 2026-10-06:18-45 收招：释放原版「次元斩」。
+                            .put(21, (entityIn) -> JudgementCut.doJudgementCut(entityIn))
                             .build())
-//                    .addTickAction(ComboState.TimeLineTickAction.getBuilder()
-//                            .put(13, (entityIn) -> // UserPoseOverrider.setRot // TODO: removed in 1.21.1(entityIn, 72, true))
-//                            .put(13 + 1, (entityIn) -> // UserPoseOverrider.setRot // TODO: removed in 1.21.1(entityIn, 72, true))
-//                            .put(13 + 2, (entityIn) -> // UserPoseOverrider.setRot // TODO: removed in 1.21.1(entityIn, 72, true))
-//                            .put(13 + 3, (entityIn) -> // UserPoseOverrider.setRot // TODO: removed in 1.21.1(entityIn, 72, true))
-//                            .put(13 + 4, (entityIn) -> // UserPoseOverrider.setRot // TODO: removed in 1.21.1(entityIn, 72, true))
-//                            .put(13 + 5, (entityIn) -> // UserPoseOverrider.resetRot // TODO: removed in 1.21.1(entityIn)).build())
+                    // 2026-10-06:16-30 Removed the UserPoseOverrider-based rotation; the API no longer exists in 1.21.1
+                    // and player rotation is handled by SlashBlade itself.
+                    // 2026-10-06:16-30 移除了基于 UserPoseOverrider 的旋转；该 API 在 1.21.1 已被移除，
+                    // 玩家旋转现由拔刀剑本体处理。
                     .addHitEffect(StunManager::setStun)::build);
     public static final DeferredHolder<ComboState, ComboState> ODACHI_COMBO_A3_END = COMBO_STATE.register("odachi_combo_a3_end",
             ComboState.Builder.newInstance().startAndEnd(1013, 1061).priority(50)
@@ -93,7 +94,8 @@ public class ComboStateRegistry {
                     .next((entity) -> TheLastSmith.prefix("fushigiri_left"))
                     .nextOfTimeout(entity -> TheLastSmith.prefix("fushigiri_right"))
                     .clickAction((entityIn) -> AttackManager.doSlash(entityIn, -30F, Vec3.ZERO, false, true, 1.5F))
-//                    .addTickAction((entityIn) -> // UserPoseOverrider.resetRot // TODO: removed in 1.21.1(entityIn))
+                    // 2026-10-06:16-30 UserPoseOverrider resetRot removed (API gone in 1.21.1).
+                    // 2026-10-06:16-30 移除 UserPoseOverrider resetRot（1.21.1 API 已不存在）。
                     .addHitEffect(StunManager::setStun)::build);
 
     public static final DeferredHolder<ComboState, ComboState> FUSHIGIRI_RIGHT = COMBO_STATE.register("fushigiri_right",
@@ -101,7 +103,8 @@ public class ComboStateRegistry {
                     .next((entity) -> SlashBlade.prefix("none"))
                     .nextOfTimeout(entity -> TheLastSmith.prefix("fushigiri_finish"))
                     .clickAction((entityIn) -> AttackManager.doSlash(entityIn, 30F, Vec3.ZERO, false, true, 1.5F))
-//                    .addTickAction((entityIn) -> // UserPoseOverrider.resetRot // TODO: removed in 1.21.1(entityIn))
+                    // 2026-10-06:16-30 UserPoseOverrider resetRot removed (API gone in 1.21.1).
+                    // 2026-10-06:16-30 移除 UserPoseOverrider resetRot（1.21.1 API 已不存在）。
                     .addHitEffect(StunManager::setStun)::build);
 
     public static final DeferredHolder<ComboState, ComboState> FUSHIGIRI_FINISH = COMBO_STATE.register("fushigiri_finish",
@@ -110,7 +113,8 @@ public class ComboStateRegistry {
                     .nextOfTimeout(entity -> SlashBlade.prefix("none"))
                     .addTickAction(ComboState.TimeLineTickAction.getBuilder()
                             .put(0, AttackManager::playQuickSheathSoundAction).build())
-//                    .addTickAction((entityIn) -> // UserPoseOverrider.resetRot // TODO: removed in 1.21.1(entityIn))
+                    // 2026-10-06:16-30 UserPoseOverrider resetRot removed (API gone in 1.21.1).
+                    // 2026-10-06:16-30 移除 UserPoseOverrider resetRot（1.21.1 API 已不存在）。
                     .releaseAction(ComboState::releaseActionQuickCharge)::build);
 
     // 注意：新版拔刀剑疑似修改了ComboState中elapsed属性的默认值，该值为0

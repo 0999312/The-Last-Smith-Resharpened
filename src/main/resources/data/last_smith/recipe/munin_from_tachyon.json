@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "blades_derby"
+    }
+  ],
+  "type": "slashblade:shaped_blade",
+  "blade": "last_smith:amagumo_munin",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "blades_derby:uma_tachyon"
+      }
+    },
+    "D": {
+      "tag": "c:dyes/light_gray"
+    },
+    "J": {
+      "item": "umapyoi:jewel"
+    },
+    "S": {
+      "item": "slashblade:proudsoul_sphere"
+    }
+  },
+  "pattern": [
+    "SJD",
+    "JBJ",
+    "DJS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "slashblade:slashblade"
+  }
+}

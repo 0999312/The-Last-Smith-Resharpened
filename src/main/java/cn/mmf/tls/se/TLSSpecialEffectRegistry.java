@@ -34,8 +34,6 @@ public class TLSSpecialEffectRegistry {
     public static final DeferredHolder<SpecialEffect, SectumsempraSE> SECTUMSEMPRA_SE = SPECIAL_EFFECT.register("sectumsempra_se",
             () -> new SectumsempraSE(40, false, false));
 
-
-    public static final DeferredHolder<SpecialEffect, UmaSpecial> UMA_SPECIAL = SPECIAL_EFFECT.register("uma_special",
-            () -> new UmaSpecial(1, 15, true, true));
-    // TODO 修改具体的SE值
+    // 2026-10-06:17-40 Removed the redundant TLS "uma_special" SE; the UMA blades now use
+    // blades_derby:uma_special (provided by the Blades Derby mod). TODO 修改具体的SE值
 }

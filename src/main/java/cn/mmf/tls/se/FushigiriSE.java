@@ -38,13 +38,27 @@ public class FushigiriSE extends SpecialEffect {
 
             int level = player.experienceLevel;
 
-            if(SpecialEffect.isEffective(se.get(), level)) {
+            // 2026-10-06:18-55 Level requirement and bonus are now read from Config.
+            // 2026-10-06:18-55 生效等级与加成改为从 Config 读取。
+            int requestLevel;
+            double bonus;
+            if (se.get() == TLSSpecialEffectRegistry.FUSHIGIRI_SE.get()) {
+                requestLevel = cn.mmf.tls.Config.fushigiriRequestLevel;
+                bonus = cn.mmf.tls.Config.fushigiriBonus;
+            } else if (se.get() == TLSSpecialEffectRegistry.EXTRA_SMITE.get()) {
+                requestLevel = cn.mmf.tls.Config.extraSmiteRequestLevel;
+                bonus = cn.mmf.tls.Config.extraSmiteBonus;
+            } else {
+                requestLevel = cn.mmf.tls.Config.smiteRequestLevel;
+                bonus = cn.mmf.tls.Config.smiteBonus;
+            }
+            if (level >= requestLevel) {
                 LivingEntity target = event.getTarget();
                 if(target.getType().is(EntityTypeTags.SENSITIVE_TO_SMITE)) {
                     target.hurt(player.damageSources().indirectMagic(player, target), 
-                            event.getBlade().getEnchantmentLevel(player.level().registryAccess()
+                            (float) (event.getBlade().getEnchantmentLevel(player.level().registryAccess()
                                     .lookupOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT)
-                                    .getOrThrow(Enchantments.SMITE)) * se.get().getSELevel() );
+                                    .getOrThrow(Enchantments.SMITE)) * bonus));
                 }
             }
         }

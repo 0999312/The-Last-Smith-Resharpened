@@ -6,10 +6,6 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import org.apache.commons.compress.utils.Lists;
 
-// TODO: energyblade 1.21.1 not available
-// import cn.mmf.energyblade.Energyblade;
-// TODO: slashblade_addon 1.21.1 not available
-// import cn.mmf.slashblade_addon.SlashBladeAddon;
 import cn.mmf.tls.TheLastSmith;
 import cn.mmf.tls.se.TLSSpecialEffectRegistry;
 import cn.mmf.tls.slasharts.TLSSlashArtsRegistry;
@@ -27,9 +23,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
-// TODO: blades_derby 1.21.1 not available
-// import net.tracen.blades_derby.se.SpecialEffectRegistry;
-import net.neoforged.fml.ModList;
 
 public class TLSSlashBladeRegistry {
     //    楼观剑
@@ -360,6 +353,10 @@ public class TLSSlashBladeRegistry {
                                 .build(),
                         PropertiesDefinition.Builder.newInstance()
                                 .baseAttackModifier(5.0F).maxDamage(70)
+                                // 2026-10-06:18-45 Give the odachi the vanilla Judgement Cut SA
+                                // so the special-attack key releases the original dimension slash.
+                                // 2026-10-06:18-45 为大太刀挂载原版「次元斩」斩击技，使斩击技键可释放原版次元斩。
+                                .slashArtsType(SlashArtsRegistry.JUDGEMENT_CUT.getId())
                                 .build(),
                         Lists.newArrayList(),
                         TheLastSmith.prefix("slashblade")
@@ -376,6 +373,8 @@ public class TLSSlashBladeRegistry {
                         PropertiesDefinition.Builder.newInstance()
                                 .baseAttackModifier(8.0F).maxDamage(70)
                                 .defaultSwordType(List.of(SwordType.BEWITCHED))
+                                // 2026-10-06:18-50 Only the Nameless Odachi gets Judgement Cut; keep the upgraded odachi's own SA.
+                                // 2026-10-06:18-50 仅无名大太刀使用「次元斩」，上级大太刀保留其原有斩击技。
                                 .slashArtsType(SlashArtsRegistry.DRIVE_HORIZONTAL.getId())
                                 .build(),
                         Lists.newArrayList(),
@@ -384,8 +383,15 @@ public class TLSSlashBladeRegistry {
 
         bootstrap.register(BUNSHI,
                 new SlashBladeDefinition(
-                        // TODO Energyblade.FORGE_ENERGY_BLACE.getId(),
-                        TheLastSmith.prefix("bunshi"),
+                        // 2026-10-06:18-20 Use the FE-chargeable HF item (energyblade:forge_energy_blade) so BUNSHI
+                        // gets the energy bar / FE storage, matching the HF Blades mechanic.
+                        // 2026-10-06:18-20 使用可充能的 HF 物品 energyblade:forge_energy_blade，使文始获得能量条/FE 存储，
+                        // 与高频刀机制一致。
+                        ResourceLocation.fromNamespaceAndPath("energyblade", "forge_energy_blade"),
+                        // 2026-10-06:17-40 Name must share the registry-key namespace so the mod_loaded condition
+                        // and the blade translation key work correctly.
+                        // 2026-10-06:17-40 名称需与注册键命名空间一致，mod_loaded 条件与刀的翻译键才能正确工作。
+                        ResourceLocation.fromNamespaceAndPath("energyblade", "bunshi"),
                         RenderDefinition.Builder
                                 .newInstance()
                                 .effectColor(0xffb7c5)
@@ -482,11 +488,12 @@ public class TLSSlashBladeRegistry {
                         ),
                         TheLastSmith.prefix("slashblade")
                 ));
-        // 2026-06-14:08-40: UMA collaboration weapons only registered when blades_derby is loaded
-        if (ModList.get().isLoaded("blades_derby")) {
-
-            bootstrap.register(UMA_TACHYON,
-                    new SlashBladeDefinition(TheLastSmith.prefix("uma_tachyon"),
+        // 2026-10-06:17-40 UMA collaboration weapons are always generated here; each entry carries a
+        // neoforge:mod_loaded(blades_derby) condition so it is skipped when the mod is absent.
+        // 2026-10-06:17-40 马娘联动刀始终在此生成；每个条目带有 neoforge:mod_loaded(blades_derby) 条件，
+        // 未安装该模组时会被跳过。
+        bootstrap.register(UMA_TACHYON,
+                new SlashBladeDefinition(ResourceLocation.fromNamespaceAndPath("blades_derby", "uma_tachyon"),
                             RenderDefinition.Builder
                                     .newInstance()
                                     //.effectColor(0xff1111)
@@ -497,7 +504,9 @@ public class TLSSlashBladeRegistry {
                                     .addSpecialEffect(TLSSpecialEffectRegistry.EXTREME_SHARPNESS.getId())
                                     .addSpecialEffect(TLSSpecialEffectRegistry.BEWITCHED_POWER.getId())
                                     .addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_SMITE.getId())
-                                    // TODO: blades_derby 1.21.1 not available - .addSpecialEffect(SpecialEffectRegistry.UMA_SPECIAL.getId())
+                                    // 2026-10-06:17-40 Use the blades_derby special effect (id referenced without a compile dependency).
+                                    // 2026-10-06:17-40 使用 blades_derby 的特殊效果（直接引用 id，避免编译依赖）。
+                                    .addSpecialEffect(ResourceLocation.fromNamespaceAndPath("blades_derby", "uma_special"))
                                     .defaultSwordType(List.of(SwordType.BEWITCHED))
                                     .slashArtsType(SlashArtsRegistry.VOID_SLASH.getId())
                                     .build(),
@@ -512,7 +521,7 @@ public class TLSSlashBladeRegistry {
                     ));
 
             bootstrap.register(UMA_RICE_SHOWER,
-                    new SlashBladeDefinition(TheLastSmith.prefix("uma_rice_shower"),
+                    new SlashBladeDefinition(ResourceLocation.fromNamespaceAndPath("blades_derby", "uma_rice_shower"),
                             RenderDefinition.Builder
                                     .newInstance()
                                     //.effectColor(0xffb7c5)
@@ -522,7 +531,7 @@ public class TLSSlashBladeRegistry {
                             PropertiesDefinition.Builder.newInstance()
                                     .baseAttackModifier(5.0F).maxDamage(70)
                                     .addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_POWER.getId())
-                                    // TODO: blades_derby 1.21.1 not available - .addSpecialEffect(SpecialEffectRegistry.UMA_SPECIAL.getId())
+                                    .addSpecialEffect(ResourceLocation.fromNamespaceAndPath("blades_derby", "uma_special"))
                                     .defaultSwordType(List.of(SwordType.BEWITCHED))
                                     .slashArtsType(TLSSlashArtsRegistry.SAKURA_BLISTERING_SWORDS.getId())
                                     .build(),
@@ -531,7 +540,7 @@ public class TLSSlashBladeRegistry {
                     ));
 
             bootstrap.register(UMA_DIGITAL,
-                    new SlashBladeDefinition(TheLastSmith.prefix("uma_digital"),
+                    new SlashBladeDefinition(ResourceLocation.fromNamespaceAndPath("blades_derby", "uma_digital"),
                             RenderDefinition.Builder
                                     .newInstance()
                                     .effectColor(0xffb7c5)
@@ -541,7 +550,7 @@ public class TLSSlashBladeRegistry {
                             PropertiesDefinition.Builder.newInstance()
                                     .baseAttackModifier(5.0F).maxDamage(70)
                                     .addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_SHARPNESS.getId())
-                                    // TODO: blades_derby 1.21.1 not available - .addSpecialEffect(SpecialEffectRegistry.UMA_SPECIAL.getId())
+                                    .addSpecialEffect(ResourceLocation.fromNamespaceAndPath("blades_derby", "uma_special"))
                                     .defaultSwordType(List.of(SwordType.BEWITCHED))
                                     .slashArtsType(TLSSlashArtsRegistry.SAKURA_BLISTERING_SWORDS.getId())
                                     .build(),
@@ -550,7 +559,7 @@ public class TLSSlashBladeRegistry {
                     ));
 
             bootstrap.register(UMA_CAFE,
-                    new SlashBladeDefinition(TheLastSmith.prefix("uma_cafe"),
+                    new SlashBladeDefinition(ResourceLocation.fromNamespaceAndPath("blades_derby", "uma_cafe"),
                             RenderDefinition.Builder
                                     .newInstance()
                                     //.effectColor(0xffb7c5)
@@ -560,14 +569,13 @@ public class TLSSlashBladeRegistry {
                             PropertiesDefinition.Builder.newInstance()
                                     .baseAttackModifier(5.0F).maxDamage(70)
                                     .addSpecialEffect(TLSSpecialEffectRegistry.SMITE_SE.getId())
-                                    // TODO: blades_derby 1.21.1 not available - .addSpecialEffect(SpecialEffectRegistry.UMA_SPECIAL.getId())
+                                    .addSpecialEffect(ResourceLocation.fromNamespaceAndPath("blades_derby", "uma_special"))
                                     .defaultSwordType(List.of(SwordType.BEWITCHED))
                                     .slashArtsType(TLSSlashArtsRegistry.SAKURA_BLISTERING_SWORDS.getId())
                                     .build(),
                             List.of(new EnchantmentDefinition(getEnchantmentID(bootstrap, Enchantments.SMITE), 2)),
                             TheLastSmith.prefix("slashblade")
                     ));
-        }
 
         bootstrap.register(EXORCISM_SAKURA,
                 new SlashBladeDefinition(TheLastSmith.prefix("exorcism_sakura"),
@@ -817,8 +825,10 @@ public class TLSSlashBladeRegistry {
     }
 
     private static ResourceKey<SlashBladeDefinition> registerEnergyBlade(String id) {
+        // 2026-10-06:17-40 Fixed namespace: the energyblade mod id is "energyblade" (no underscore).
+        // 2026-10-06:17-40 修正命名空间：energyblade 模组 id 为 "energyblade"（无下划线）。
         return ResourceKey.create(SlashBladeDefinition.REGISTRY_KEY,
-                ResourceLocation.fromNamespaceAndPath("energy_blade", id));
+                ResourceLocation.fromNamespaceAndPath("energyblade", id));
     }
 
     private static Holder<Enchantment> getEnchantmentID(BootstrapContext<SlashBladeDefinition> bootstrap, ResourceKey<Enchantment> enchantment) {

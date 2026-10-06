@@ -1,0 +1,26 @@
+{
+  "anvil_cost": 2,
+  "description": {
+    "translate": "enchantment.last_smith.spirit_absorption"
+  },
+  "max_cost": {
+    "base": 6,
+    "per_level_above_first": 10
+  },
+  "max_level": 5,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "hand"
+  ],
+  "supported_items": [
+    "slashblade:slashblade",
+    "slashblade:slashblade_wood",
+    "slashblade:slashblade_bamboo",
+    "slashblade:slashblade_silverbamboo",
+    "slashblade:slashblade_white"
+  ],
+  "weight": 5
+}

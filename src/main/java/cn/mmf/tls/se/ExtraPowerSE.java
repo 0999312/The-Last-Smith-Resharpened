@@ -35,12 +35,19 @@ public class ExtraPowerSE extends SpecialEffect {
 
             int level = player.experienceLevel;
 
-            if(SpecialEffect.isEffective(se.get(), level)) {
+            // 2026-10-06:18-55 Level requirement and bonus are now read from Config.
+            // 2026-10-06:18-55 生效等级与加成改为从 Config 读取。
+            boolean bewitched = se.get() == TLSSpecialEffectRegistry.BEWITCHED_POWER.get();
+            int requestLevel = bewitched ? cn.mmf.tls.Config.bewitchedPowerRequestLevel
+                    : cn.mmf.tls.Config.extraPowerRequestLevel;
+            if (level >= requestLevel) {
+                float bonus = (float) (bewitched ? cn.mmf.tls.Config.bewitchedPowerBonus
+                        : cn.mmf.tls.Config.extraPowerBonus);
                 event.setDamage(event.getDamage() * 
                         1 + (event.getBlade().getEnchantmentLevel(player.level().registryAccess()
                                 .lookupOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT)
                                 .getOrThrow(Enchantments.POWER)) 
-                                * se.get().getSELevel() * 0.1F));
+                                * bonus));
             }
         }
     }
