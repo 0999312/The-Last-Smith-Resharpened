@@ -169,10 +169,10 @@ public class TLSLangProvider extends AbstractLangProvider {
 
 		// 2026-10-06:19-00 Slash-art effect descriptions.
 		// 2026-10-06:19-00 斩击技效果描述。
-		add("slash_art.last_smith.transmigration_slash.desc", "Unleashes the odachi combo.");
-		add("slash_art.last_smith.fushigiri.desc", "Unleashes the Mortal Blade.");
-		add("slash_art.last_smith.iai_cross.desc", "A cross-drawn iai slash.");
-		add("slash_art.last_smith.sakura_blistering_swords.desc", "Summons sakura flying blades.");
+		add("slash_art.last_smith.transmigration_slash.desc", "Unleashes the odachi combo: three consecutive heavy slashes (ODACHI_COMBO_A1 -> A2 -> A3).");
+		add("slash_art.last_smith.fushigiri.desc", "The Mortal Blade technique: two alternating slashes followed by a sheathing finish.");
+		add("slash_art.last_smith.iai_cross.desc", "A cross-shaped iai draw slash that strikes in front of the user.");
+		add("slash_art.last_smith.sakura_blistering_swords.desc", "Summons several sakura-colored flying blades that fly forward and strike enemies.");
 		
 		// 2026-10-06:16-30 Enchantment is data-driven in 1.21.1; add the enchantment name keys manually.
 		// 2026-10-06:16-30 1.21.1 附魔为数据驱动，手动添加附魔名称翻译键。
@@ -195,14 +195,14 @@ public class TLSLangProvider extends AbstractLangProvider {
 
 		// 2026-10-06:19-00 Special-effect descriptions.
 		// 2026-10-06:19-00 特殊效果描述。
-		add("se.last_smith.extra_sharpness.desc", "Bonus damage per Sharpness level.");
-		add("se.last_smith.extreme_sharpness.desc", "Greater bonus damage per Sharpness level.");
-		add("se.last_smith.extra_power.desc", "Bonus damage per Power level.");
-		add("se.last_smith.bewitched_power.desc", "Greater bonus damage per Power level.");
-		add("se.last_smith.smite_se.desc", "Bonus damage to undead per Smite level.");
-		add("se.last_smith.extra_smite.desc", "Greater bonus damage to undead per Smite level.");
-		add("se.last_smith.fushigiri_se.desc", "Greatest bonus damage to undead per Smite level.");
-		add("se.last_smith.sectumsempra_se.desc", "Summoned swords deal extra damage on hit.");
+		add("se.last_smith.extra_sharpness.desc", "On a successful slash, adds bonus damage equal to Sharpness level x 0.1 (per-level value is configurable).");
+		add("se.last_smith.extreme_sharpness.desc", "On a successful slash, adds bonus damage equal to Sharpness level x 0.2 (per-level value is configurable).");
+		add("se.last_smith.extra_power.desc", "On a successful slash, adds bonus damage equal to Power level x 0.1 (per-level value is configurable).");
+		add("se.last_smith.bewitched_power.desc", "On a successful slash, adds bonus damage equal to Power level x 0.2 (per-level value is configurable).");
+		add("se.last_smith.smite_se.desc", "When hitting undead, deals extra magic damage equal to Smite level x 1 (per-level value is configurable).");
+		add("se.last_smith.extra_smite.desc", "When hitting undead, deals extra magic damage equal to Smite level x 2 (per-level value is configurable).");
+		add("se.last_smith.fushigiri_se.desc", "When hitting undead, deals extra magic damage equal to Smite level x 3 (per-level value is configurable).");
+		add("se.last_smith.sectumsempra_se.desc", "When a summoned sword hits a target, deals bonus damage (target's current health x ratio + flat damage) and draws a white particle curve. Triggers once per sword.");
 		
 		addItem(ItemRegistry.SAKURA, "Spirit Sakura Leaf");
         addItem(ItemRegistry.SAKURA_FULL, "Spirit Sakura");
