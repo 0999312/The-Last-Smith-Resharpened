@@ -115,7 +115,7 @@ repositories {
 dependencies {
     // ─── Hard dependencies ───
     implementation "net.neoforged:neoforge:${neo_version}"
-    implementation "cn.mcmod_mmf:mysterious_mountain_lib:1.2.15-1.21.1"
+    implementation "cn.mcmod_mmf:mysterious_mountain_lib:${mm_lib_version}"
     implementation "maven.modrinth:slashblade-resharped:${slashblade_version}"
 
     // ─── Optional mods (compileOnly) ───
