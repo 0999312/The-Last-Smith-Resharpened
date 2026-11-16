@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nagasada": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_sakura"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "last_smith:nagasada"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nagasada"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "last_smith:nagasada"
+    ]
+  }
+}

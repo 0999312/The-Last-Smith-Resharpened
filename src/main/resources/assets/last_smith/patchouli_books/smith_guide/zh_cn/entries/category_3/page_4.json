@@ -1,6 +1,6 @@
 {
    "name" : "刚剑「胴田贯」",
-   "icon" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"slashblade:model/named/muramasa/muramasa.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"slashblade:model/named/muramasa/doutanuki.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:0b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.slashblade.doutanuki\"}}",
+   "icon" : "slashblade:slashblade[slashblade:blade_state={broken: 1b,defaultBewitched: 0b,translationKey: \"item.slashblade.sabigatana\",effectColor: -13421569,texture: \"slashblade:model/named/muramasa/sabigatana.png\",sealed: 1b,refine: 0,comboRoot: \"slashblade:standby\",effectColorInverse: 0b,adjust: [0.0d, 0.0d, 0.0d],proudSoul: 0,killCount: 0,specialEffects: [],slashArtsKey: \"slashblade:judgement_cut\",model: \"slashblade:model/named/muramasa/muramasa.obj\",carryType: \"pso2\",baseAttackModifier: 3.0f}]",
    "category" : "last_smith:category_3",
    "pages" : [
       {
@@ -9,7 +9,7 @@
       },
       {
          "type" : "patchouli:spotlight",
-         "item" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"slashblade:model/named/muramasa/muramasa.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"slashblade:model/named/muramasa/sabigatana.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:1b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.slashblade.sabigatana\"}}",
+         "item" : "slashblade:slashblade[slashblade:blade_state={broken: 1b,defaultBewitched: 0b,translationKey: \"item.slashblade.sabigatana\",effectColor: -13421569,texture: \"slashblade:model/named/muramasa/sabigatana.png\",sealed: 1b,refine: 0,comboRoot: \"slashblade:standby\",effectColorInverse: 0b,adjust: [0.0d, 0.0d, 0.0d],proudSoul: 0,killCount: 0,specialEffects: [],slashArtsKey: \"slashblade:judgement_cut\",model: \"slashblade:model/named/muramasa/muramasa.obj\",carryType: \"pso2\",baseAttackModifier: 3.0f}]",
          "text" : "有些僵尸身上会持有锈刀，可以想办法夺过他手里的刀。$(br2)似乎带着断刀的僵尸更多一些，但也有刀刃保存良好的锈刀。"
       },
       {

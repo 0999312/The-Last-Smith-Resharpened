@@ -1,0 +1,24 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "tag": "c:dyes/pink"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "enchantments": [
+        {
+          "id": "minecraft:smite"
+        }
+      ],
+      "name": "last_smith:nagasada"
+    }
+  },
+  "blade": "last_smith:exorcism_sakura",
+  "template": {
+    "item": "last_smith:scroll_named"
+  }
+}

@@ -21,6 +21,12 @@ build
 eclipse
 run
 run-data
+src/generated/resources/.cache
 
+# docs
+Documents
+libs
+*.py
+=======
 # Files from Forge MDK
 forge*changelog.txt

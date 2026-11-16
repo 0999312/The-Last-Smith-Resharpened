@@ -1,0 +1,27 @@
+{
+  "type": "last_smith:research",
+  "blade": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "name": "last_smith:exorcism_sakura"
+    }
+  },
+  "ink": [
+    {
+      "item": "minecraft:ink_sac"
+    },
+    {
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "id": "last_smith:scroll_exorcism"
+  },
+  "paper": {
+    "item": "minecraft:paper"
+  }
+}

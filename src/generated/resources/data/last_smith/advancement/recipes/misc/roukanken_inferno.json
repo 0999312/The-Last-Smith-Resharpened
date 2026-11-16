@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_roukanken_inferno": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_yamato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "last_smith:roukanken_inferno"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_roukanken_inferno"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "last_smith:roukanken_inferno"
+    ]
+  }
+}

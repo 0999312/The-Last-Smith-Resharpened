@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "c:ingots/gold"
+  },
+  "base": {
+    "item": "last_smith:blade_sakura_unfinished_4"
+  },
+  "result": {
+    "count": 1,
+    "id": "last_smith:blade_sakura"
+  },
+  "template": {
+    "item": "last_smith:scroll_blade"
+  }
+}

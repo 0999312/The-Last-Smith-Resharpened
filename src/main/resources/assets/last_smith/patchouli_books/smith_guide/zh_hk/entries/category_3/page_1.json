@@ -1,6 +1,6 @@
 {
    "name" : "無銘「無名」",
-   "icon" : "slashblade:slashblade",
+   "icon" : "slashblade:slashblade[slashblade:blade_state={broken: 0b, defaultBewitched: 0b, translationKey: \"item.slashblade.slashblade\", effectColor: -13421569, texture: \"slashblade:model/named/yamato.png\", sealed: 0b, refine: 0, comboRoot: \"slashblade:standby\", effectColorInverse: 0b, adjust: [0.0d, 0.0d, 0.0d], proudSoul: 0, killCount: 0, specialEffects: [], slashArtsKey: \"slashblade:judgement_cut\", model: \"slashblade:model/named/yamato.obj\", carryType: \"pso2\", baseAttackModifier: 4.0f}]",
    "category" : "last_smith:category_3",
    "pages" : [
       {

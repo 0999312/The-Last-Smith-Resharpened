@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_slashblade_from_bamboolight": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_katana"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "last_smith:slashblade_from_bamboolight"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_slashblade_from_bamboolight"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "last_smith:slashblade_from_bamboolight"
+    ]
+  }
+}

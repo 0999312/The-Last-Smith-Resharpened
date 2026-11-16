@@ -1,0 +1,89 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "slashblade_addon"
+    }
+  ],
+  "type": "last_smith:research",
+  "blade": [
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:blue"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:wanderer"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:tboen"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:katana"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:tachi"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:frost_wolf"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:frosty_cherry"
+      }
+    }
+  ],
+  "ink": [
+    {
+      "item": "minecraft:ink_sac"
+    },
+    {
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "id": "last_smith:scroll_named"
+  },
+  "paper": {
+    "item": "minecraft:paper"
+  }
+}

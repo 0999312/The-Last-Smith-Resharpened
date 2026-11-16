@@ -1,0 +1,77 @@
+{
+  "parent": "last_smith:meteorn",
+  "criteria": {
+    "has_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:yamato_neo"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.yamato.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "components": {
+        "minecraft:enchantments": {
+          "levels": {
+            "minecraft:feather_falling": 4,
+            "minecraft:power": 5,
+            "minecraft:soul_speed": 2
+          }
+        },
+        "minecraft:rarity": "epic",
+        "slashblade:blade_state": {
+          "adjust": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseAttackModifier": 9.0,
+          "broken": false,
+          "carryType": "default",
+          "comboRoot": "slashblade:standby",
+          "defaultBewitched": true,
+          "effectColor": -13421569,
+          "effectColorInverse": false,
+          "killCount": 0,
+          "model": "last_smith:model/named/yamato_neo/yamato_neo.obj",
+          "proudSoul": 0,
+          "refine": 0,
+          "sealed": false,
+          "slashArtsKey": "slashblade:judgement_cut",
+          "specialEffects": [
+            "last_smith:extra_power",
+            "last_smith:extra_sharpness"
+          ],
+          "texture": "last_smith:model/named/yamato_neo/yamato_neo.png",
+          "translationKey": "item.last_smith.yamato_neo"
+        }
+      },
+      "count": 1,
+      "id": "slashblade:slashblade"
+    },
+    "title": {
+      "translate": "advancement.last_smith.yamato.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_blade"
+    ]
+  ]
+}

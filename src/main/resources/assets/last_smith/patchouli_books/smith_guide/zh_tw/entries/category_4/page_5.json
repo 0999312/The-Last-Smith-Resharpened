@@ -1,6 +1,6 @@
 {
    "name" : "眾星之星落",
-   "icon" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"slashblade:model/named/sange/sange.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"slashblade:model/named/sange/sange.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:0b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.slashblade.sange\"}}",
+   "icon" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"slashblade:model/named/sange/sange.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"slashblade:model/named/sange/sange.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.slashblade.sange\", refine: 0, specialEffects: []}]",
    "category" : "last_smith:category_4",
    "pages" : [
       {
@@ -9,27 +9,27 @@
       },
       {
          "type" : "patchouli:spotlight",
-         "item" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"slashblade:model/named/sange/sange.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"slashblade:model/named/sange/sange.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:0b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.slashblade.sange\"}}",
+         "item" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"slashblade:model/named/sange/sange.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"slashblade:model/named/sange/sange.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.slashblade.sange\", refine: 0, specialEffects: []}]",
          "text" : "不知為何，散華作為其中一振眾星之刃，竟然藏在凋靈的體內。$(br2)但獲得它，需要用刀劍斬殺這個可怖的邪靈。"
       },
       {
          "type" : "patchouli:spotlight",
-         "item" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"slashblade:model/named/agito.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"slashblade:model/named/agito_false.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:0b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.slashblade.agito\"}}",
+         "item" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"slashblade:model/named/agito.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"slashblade:model/named/agito_false.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.slashblade.agito\", refine: 0, specialEffects: []}]",
          "text" : "暮光之森裏的大蛇娜迦持有着鄂門之名的利刃，但卻是鄂門的贗作。$(br2)但獲得它，需要用刀劍斬殺這條大蛇。"
       },
       {
          "type" : "patchouli:spotlight",
-         "item" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"slashblade:model/named/agito.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"slashblade:model/named/agito_true.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:0b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.slashblade.orotiagito_sealed\"}}",
+         "item" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"slashblade:model/named/agito.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"slashblade:model/named/agito_true.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.slashblade.orotiagito_sealed\", refine: 0, specialEffects: []}]",
          "text" : "如同八岐大蛇一般棲息在暮光之森的九頭蛇持有着鄂門的真品。$(br2)但獲得它，需要用刀劍斬殺這條大蛇。"
       },
       {
          "type" : "patchouli:spotlight",
-         "item" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"slashblade:model/named/yasha/yasha.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"slashblade:model/named/yasha/yasha.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:0b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.slashblade.yasha\"}}",
+         "item" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"slashblade:model/named/yasha/yasha.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"slashblade:model/named/yasha/yasha.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.slashblade.yasha\", refine: 0, specialEffects: []}]",
          "text" : "暮光之森的牛頭人持有着夜叉之名的贗作。$(br2)要獲得它，需要用刀劍斬殺這邪惡的牛頭。"
       },
       {
          "type" : "patchouli:spotlight",
-         "item" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"slashblade:model/named/yasha/yasha_true.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"slashblade:model/named/yasha/yasha.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:0b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.slashblade.yasha_true\"}}",
+         "item" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"slashblade:model/named/yasha/yasha_true.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"slashblade:model/named/yasha/yasha.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.slashblade.yasha_true\", refine: 0, specialEffects: []}]",
          "text" : "暮光之森當中有奇怪的人身牛頭怪物持有着夜叉的真品。$(br2)但獲得它，需要用刀劍斬殺這邪惡的造物。"
       }
    ],

@@ -1,6 +1,6 @@
 {
    "name" : "千子村正",
-   "icon" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"slashblade:model/named/muramasa/muramasa.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"slashblade:model/named/muramasa/muramasa.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:0b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.slashblade.muramasa\"}}",
+   "icon" : "slashblade:slashblade[slashblade:blade_state={attackAmplifier: 0.0f, comboRoot: \"slashblade:standby\", model: \"slashblade:model/named/muramasa/muramasa.obj\", slashArtsKey: \"slashblade:judgement_cut\", carryType: \"pso2\", effectColor: -13421569, effectColorInverse: 0b, texture: \"slashblade:model/named/muramasa/muramasa.png\", adjust: [0.0d,0.0d,0.0d], baseAttackModifier: 5.0f, broken: 0b, defaultBewitched: 0b, sealed: 0b, killCount: 0, proudSoul: 0, translationKey: \"item.slashblade.muramasa\", refine: 0, specialEffects: []}]",
    "category" : "last_smith:category_4",
    "pages" : [
       {

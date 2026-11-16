@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_exorcism_ginkgo": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_named"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "last_smith:exorcism_ginkgo"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_exorcism_ginkgo"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "last_smith:exorcism_ginkgo"
+    ]
+  }
+}

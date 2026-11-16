@@ -1,0 +1,47 @@
+{
+  "type": "last_smith:research",
+  "blade": [
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade:sange"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade:yasha_true"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade:orotiagito"
+      }
+    }
+  ],
+  "ink": [
+    {
+      "item": "minecraft:ink_sac"
+    },
+    {
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "id": "last_smith:scroll_star"
+  },
+  "paper": {
+    "item": "minecraft:paper"
+  }
+}

@@ -1,6 +1,6 @@
 package cn.mmf.tls.se;
 
-import mods.flammpfeil.slashblade.capability.slashblade.CapabilitySlashBlade;
+import mods.flammpfeil.slashblade.capability.slashblade.BladeStateAccess;
 import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
 import mods.flammpfeil.slashblade.entity.EntityAbstractSummonedSword;
 import mods.flammpfeil.slashblade.event.SlashBladeEvent;
@@ -14,11 +14,11 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import org.joml.Vector3f;
 
-@EventBusSubscriber
+@EventBusSubscriber(modid = cn.mmf.tls.TheLastSmith.MODID)
 public class SectumsempraSE extends SpecialEffect {
     public static final Vector3f COLOR_WHITE = new Vector3f(1f, 1f, 1f);
     public static final Vector3f COLOR_GREY = new Vector3f(0.25f, 0.25f, 0.25f);
@@ -36,7 +36,7 @@ public class SectumsempraSE extends SpecialEffect {
         EntityAbstractSummonedSword summonedSword = event.getSummonedSword();
         if (summonedSword.getShooter() instanceof ServerPlayer player) {
             ItemStack stack = player.getItemInHand(InteractionHand.MAIN_HAND);
-            stack.getCapability(CapabilitySlashBlade.BLADESTATE).ifPresent((state) -> {
+            BladeStateAccess.of(stack).ifPresent((state) -> {
                 Entity target = event.getTarget();
                 doSectumsempra(state, player, target, summonedSword);
 
@@ -48,7 +48,9 @@ public class SectumsempraSE extends SpecialEffect {
     private static boolean doSectumsempra(ISlashBladeState state, ServerPlayer player, Entity target, EntityAbstractSummonedSword summonedSword) {
         if (!state.hasSpecialEffect(TLSSpecialEffectRegistry.SECTUMSEMPRA_SE.getId())) return false;
         int level = player.experienceLevel;
-        if (!SpecialEffect.isEffective(TLSSpecialEffectRegistry.SECTUMSEMPRA_SE.get(), level)) return false;
+        // 2026-10-06:18-55 Level requirement is now read from Config.
+        // 2026-10-06:18-55 生效等级改为从 Config 读取。
+        if (level < cn.mmf.tls.Config.sectumsempraRequestLevel) return false;
 
         ServerLevel serverLevel = player.serverLevel();
         Vec3 startPos = player.position();
@@ -61,11 +63,14 @@ public class SectumsempraSE extends SpecialEffect {
             summonedSword.getPersistentData().putBoolean(SECTUMSEMPRA_BOOSTED, true);
             summonedSword.setDamage(summonedSword.getDamage() + 1.0f);
             if (target instanceof LivingEntity living) {
-                float extraDamage1 = living.getHealth() * 0.04f + 1f;
+                // 2026-10-06:18-55 Damage values are now read from Config.
+                // 2026-10-06:18-55 伤害数值改为从 Config 读取。
+                float flat = (float) cn.mmf.tls.Config.sectumsempraFlatDamage;
+                float extraDamage1 = living.getHealth() * (float) cn.mmf.tls.Config.sectumsempraHealthRatio + flat;
                 living.invulnerableTime = 0;
                 living.hurt(player.damageSources().indirectMagic(summonedSword, player), extraDamage1);
 
-                float extraDamage2 = 1f;
+                float extraDamage2 = flat;
                 living.invulnerableTime = 0;
                 living.hurt(player.damageSources().indirectMagic(summonedSword, player), extraDamage2);
             }
@@ -76,37 +81,31 @@ public class SectumsempraSE extends SpecialEffect {
     }
 
     public static void drawParticleCurve(ServerLevel level, Vec3 start, Vec3 end, ParticleOptions particle, int baseDensity) {
-        // 起点随机偏移
         double startOffsetRange = 2.0d;
         double startX = start.x() + ((level.getRandom().nextDouble() - 0.5d) * startOffsetRange);
         double startY = start.y() + (0.5d + (level.getRandom().nextDouble() - 0.5d) * startOffsetRange);
         double startZ = start.z() + ((level.getRandom().nextDouble() - 0.5d) * startOffsetRange);
 
-        // 中点
         double midX = (startX + end.x()) / 2.0d;
         double midY = (startY + end.y()) / 2.0d;
         double midZ = (startZ + end.z()) / 2.0d;
 
-        // 计算起点到终点的距离
         double distance = Math.sqrt(
                 Math.pow(end.x() - startX, 2d) +
                         Math.pow(end.y() - startY, 2d) +
                         Math.pow(end.z() - startZ, 2d)
         );
 
-        // 距离越远粒子越多
         double distanceFactor = Math.min(distance / 10.0d, 1.0d);
 
         int adjustedDensity = (int) (baseDensity * (0.3d + 0.7d * distanceFactor));
 
-        // 距离越近，弯曲度越高
         double curvatureFactor = Math.max(2.0d - distanceFactor * 1.8d, 0.1d);
         double maxOffset = distance * curvatureFactor;
         double offsetX = (level.getRandom().nextDouble() - 0.5d) * maxOffset;
         double offsetY = (level.getRandom().nextDouble() - 0.2d) * maxOffset * 0.8d;
         double offsetZ = (level.getRandom().nextDouble() - 0.5d) * maxOffset;
 
-        // 控制点
         double controlX = midX + offsetX;
         double controlY = midY + offsetY;
         double controlZ = midZ + offsetZ;

@@ -1,0 +1,34 @@
+{
+  "parent": "last_smith:scrolls",
+  "criteria": {
+    "has_scroll": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_named"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.scroll_named.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "last_smith:scroll_named"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.last_smith.scroll_named.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_scroll"
+    ]
+  ]
+}

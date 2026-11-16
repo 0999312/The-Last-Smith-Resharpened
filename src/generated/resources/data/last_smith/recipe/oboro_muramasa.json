@@ -1,0 +1,49 @@
+{
+  "type": "slashblade:shaped_blade",
+  "blade": "last_smith:oboro_muramasa",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "last_smith:scroll_muramasa"
+    },
+    "F": {
+      "item": "last_smith:sakura_full"
+    },
+    "K": {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "kill": 1500,
+        "name": "slashblade:muramasa",
+        "proud_soul": 5000,
+        "refine": 20
+      }
+    },
+    "O": {
+      "item": "slashblade:proudsoul_sphere"
+    },
+    "S": {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "kill": 1500,
+        "name": "last_smith:muramasa_kagura",
+        "proud_soul": 5000,
+        "refine": 20
+      }
+    }
+  },
+  "pattern": [
+    "OFO",
+    "SBK",
+    "OFO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "slashblade:slashblade"
+  }
+}

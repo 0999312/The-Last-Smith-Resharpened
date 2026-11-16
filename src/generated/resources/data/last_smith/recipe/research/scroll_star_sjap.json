@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "slashblade_addon"
+    }
+  ],
+  "type": "last_smith:research",
+  "blade": [
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:snow_crow"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:murakumo"
+      }
+    },
+    {
+      "type": "slashblade:blade",
+      "items": [
+        "slashblade:slashblade"
+      ],
+      "request": {
+        "name": "slashblade_addon:dark_raven"
+      }
+    }
+  ],
+  "ink": [
+    {
+      "item": "minecraft:ink_sac"
+    },
+    {
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "id": "last_smith:scroll_star"
+  },
+  "paper": {
+    "item": "minecraft:paper"
+  }
+}

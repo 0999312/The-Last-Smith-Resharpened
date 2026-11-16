@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "slashblade"
+    }
+  ],
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "tag": "c:bamboo"
+  },
+  "base": {
+    "item": "slashblade:slashblade_wood"
+  },
+  "blade": "slashblade:slashblade_bamboo",
+  "template": {
+    "item": "last_smith:scroll_basic"
+  }
+}

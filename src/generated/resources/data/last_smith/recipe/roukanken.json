@@ -1,0 +1,25 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:sakura_sphere"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "enchantments": [
+        {
+          "id": "minecraft:sharpness"
+        }
+      ],
+      "name": "last_smith:nameless_odachi",
+      "refine": 10
+    }
+  },
+  "blade": "last_smith:roukanken",
+  "template": {
+    "item": "last_smith:scroll_exorcism"
+  }
+}

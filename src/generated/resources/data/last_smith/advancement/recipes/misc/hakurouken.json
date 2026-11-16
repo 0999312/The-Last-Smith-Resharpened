@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hakurouken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_exorcism"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "last_smith:hakurouken"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hakurouken"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "last_smith:hakurouken"
+    ]
+  }
+}

@@ -4,7 +4,6 @@ import cn.mcmod_mmf.mmlib.data.AbstractLangProvider;
 import cn.mmf.tls.TheLastSmith;
 import cn.mmf.tls.block.BlockRegistry;
 import cn.mmf.tls.data.builtin.TLSSlashBladeRegistry;
-import cn.mmf.tls.enchantments.EnchantmentsRegistry;
 import cn.mmf.tls.item.ItemRegistry;
 import cn.mmf.tls.se.TLSSpecialEffectRegistry;
 import mods.flammpfeil.slashblade.registry.slashblade.SlashBladeDefinition;
@@ -28,9 +27,16 @@ public class TLSLangProvider extends AbstractLangProvider {
 		add("last_smith.jei.cauldron", "Cauldron Quenching");
 		add("last_smith.jei.cauldron_need_water", "Need some water in the cauldron.");
 
+		// 2026-10-06:18-20 EMI recipe category names (follow the EMI compat).
+		// 2026-10-06:18-20 EMI 配方分类名称（跟随 EMI 兼容）。
 		add("emi.category.last_smith.research", "Researching");
 		add("emi.category.last_smith.cauldron", "Cauldron Quenching");
 
+		// 2026-10-06:15-40 Migrated out of the hand-written src/main/resources lang file, whose duplicate copy is
+		// being removed so the generated lang file becomes the single source of truth.
+		// 2026-10-06:15-40 从手工维护的 src/main/resources 语言文件迁移而来，该重复文件将被移除，使生成的
+		// 语言文件成为唯一来源。
+		add("message.last_smith.cauldron_empty", "You need to have water in the pot when quenching.");
 
 		add("guide.smith_guide.title", "The Way of Bewitched Blade");
 		add("guide.smith_guide.landing_text", "This book records many ancient stories...");
@@ -160,10 +166,23 @@ public class TLSLangProvider extends AbstractLangProvider {
 		add("slash_art.last_smith.fushigiri", "Mortal Draw");
 		add("slash_art.last_smith.iai_cross", "Ashina Cross");
 		add("slash_art.last_smith.sakura_blistering_swords", "Sakura -Blistering-");
+
+		// 2026-10-06:19-00 Slash-art effect descriptions.
+		// 2026-10-06:19-00 斩击技效果描述。
+		add("slash_art.last_smith.transmigration_slash.desc", "Unleashes the odachi combo: three consecutive heavy slashes (ODACHI_COMBO_A1 -> A2 -> A3).");
+		add("slash_art.last_smith.fushigiri.desc", "The Mortal Blade technique: two alternating slashes followed by a sheathing finish.");
+		add("slash_art.last_smith.iai_cross.desc", "A cross-shaped iai draw slash that strikes in front of the user.");
+		add("slash_art.last_smith.sakura_blistering_swords.desc", "Summons several sakura-colored flying blades that fly forward and strike enemies.");
 		
-		addEnchantment(EnchantmentsRegistry.SPIRIT_SLASH, "Spirit Slash");
+		// 2026-10-06:16-30 Enchantment is data-driven in 1.21.1; add the enchantment name keys manually.
+		// 2026-10-06:16-30 1.21.1 附魔为数据驱动，手动添加附魔名称翻译键。
+		add("enchantment.last_smith.spirit_slash", "Spirit Slash");
+		add("enchantment.last_smith.spirit_absorption", "Spirit Absorption");
+		// 2026-10-06:17-40 Effect descriptions shown in the item tooltip.
+		// 2026-10-06:17-40 物品提示中显示的效果描述。
+		add("enchantment.last_smith.spirit_slash.desc", "Kill count +%s on kill");
+		add("enchantment.last_smith.spirit_absorption.desc", "Proud soul gained +%s%%");
 		
-		addEnchantment(EnchantmentsRegistry.SPIRIT_ABSORPTION, "Spirit Absorption");
 
 		addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_POWER.getId(), "Spirit Power");
 		addSpecialEffect(TLSSpecialEffectRegistry.BEWITCHED_POWER.getId(), "Bewitched Power");
@@ -173,6 +192,17 @@ public class TLSLangProvider extends AbstractLangProvider {
 		addSpecialEffect(TLSSpecialEffectRegistry.SMITE_SE.getId(), "Exorcism");
 		addSpecialEffect(TLSSpecialEffectRegistry.EXTRA_SMITE.getId(), "Nirvana");
 		addSpecialEffect(TLSSpecialEffectRegistry.FUSHIGIRI_SE.getId(), "Fushigiri");
+
+		// 2026-10-06:19-00 Special-effect descriptions.
+		// 2026-10-06:19-00 特殊效果描述。
+		add("se.last_smith.extra_sharpness.desc", "On a successful slash, adds bonus damage equal to Sharpness level x 0.1 (per-level value is configurable).");
+		add("se.last_smith.extreme_sharpness.desc", "On a successful slash, adds bonus damage equal to Sharpness level x 0.2 (per-level value is configurable).");
+		add("se.last_smith.extra_power.desc", "On a successful slash, adds bonus damage equal to Power level x 0.1 (per-level value is configurable).");
+		add("se.last_smith.bewitched_power.desc", "On a successful slash, adds bonus damage equal to Power level x 0.2 (per-level value is configurable).");
+		add("se.last_smith.smite_se.desc", "When hitting undead, deals extra magic damage equal to Smite level x 1 (per-level value is configurable).");
+		add("se.last_smith.extra_smite.desc", "When hitting undead, deals extra magic damage equal to Smite level x 2 (per-level value is configurable).");
+		add("se.last_smith.fushigiri_se.desc", "When hitting undead, deals extra magic damage equal to Smite level x 3 (per-level value is configurable).");
+		add("se.last_smith.sectumsempra_se.desc", "When a summoned sword hits a target, deals bonus damage (target's current health x ratio + flat damage) and draws a white particle curve. Triggers once per sword.");
 		
 		addItem(ItemRegistry.SAKURA, "Spirit Sakura Leaf");
         addItem(ItemRegistry.SAKURA_FULL, "Spirit Sakura");

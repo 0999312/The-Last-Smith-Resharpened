@@ -1,0 +1,67 @@
+{
+  "parent": "last_smith:blade_sakura",
+  "criteria": {
+    "has_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:nagasada"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.nagasada.desc"
+    },
+    "icon": {
+      "components": {
+        "!minecraft:rarity": {},
+        "minecraft:max_damage": 100,
+        "slashblade:blade_state": {
+          "adjust": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseAttackModifier": 4.0,
+          "broken": false,
+          "carryType": "default",
+          "comboRoot": "slashblade:standby",
+          "defaultBewitched": false,
+          "effectColor": -13421569,
+          "effectColorInverse": false,
+          "killCount": 0,
+          "model": "last_smith:model/nagasada/model.obj",
+          "proudSoul": 0,
+          "refine": 0,
+          "sealed": false,
+          "slashArtsKey": "slashblade:judgement_cut",
+          "specialEffects": [],
+          "texture": "last_smith:model/nagasada/texture.png",
+          "translationKey": "item.last_smith.nagasada"
+        }
+      },
+      "count": 1,
+      "id": "slashblade:slashblade"
+    },
+    "title": {
+      "translate": "advancement.last_smith.nagasada.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_blade"
+    ]
+  ]
+}

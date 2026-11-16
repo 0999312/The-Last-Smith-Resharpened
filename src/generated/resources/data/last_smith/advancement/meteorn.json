@@ -1,0 +1,35 @@
+{
+  "parent": "last_smith:scroll_named",
+  "criteria": {
+    "has_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_star"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.meteorn.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "last_smith:scroll_star"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.last_smith.meteorn.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_blade"
+    ]
+  ]
+}

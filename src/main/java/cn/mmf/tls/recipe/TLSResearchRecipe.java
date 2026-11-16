@@ -2,128 +2,115 @@ package cn.mmf.tls.recipe;
 
 import java.util.stream.Stream;
 
-import com.google.gson.JsonObject;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.world.Container;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 
-public class TLSResearchRecipe implements Recipe<Container> {
-	private final ResourceLocation id;
+public record TLSResearchRecipe(ItemStack output, Ingredient blade, Ingredient paper,
+                                Ingredient ink) implements Recipe<TLSResearchRecipeInput> {
 
-	public Ingredient blade;
-	public Ingredient paper;
-	public Ingredient ink;
+    @Override
+    public boolean matches(TLSResearchRecipeInput wrapper, @NotNull Level level) {
+        return this.blade.test(wrapper.getItem(TLSResearchRecipeInput.BLADE))
+                && this.paper.test(wrapper.getItem(TLSResearchRecipeInput.PAPER))
+                && this.ink.test(wrapper.getItem(TLSResearchRecipeInput.INK));
+    }
 
-	public ItemStack output;
+    @Override
+    public boolean isIncomplete() {
+        return Stream.of(this.blade, this.paper, this.ink).anyMatch(Ingredient::isEmpty);
+    }
 
-	public TLSResearchRecipe(ResourceLocation id, ItemStack output, Ingredient blade, Ingredient paper,
-			Ingredient ink) {
-		super();
-		this.id = id;
-		this.output = output;
-		this.blade = blade;
-		this.paper = paper;
-		this.ink = ink;
-	}
+    @Override
+    public @NotNull ItemStack assemble(@NotNull TLSResearchRecipeInput input, HolderLookup.@NotNull Provider registries) {
+        // 2026-09-20:17-47 Fixed: the recipe broke once the crafted note was moved into the player inventory.
+        // Returning the shared output stack made the result slot, the recipe and the inventory reference the same
+        // ItemStack, so merging/picking it up in the inventory zeroed the recipe output. Vanilla assemble() always
+        // returns a copy (see ShapedRecipe / AbstractCookingRecipe).
+        // 2026-09-20:17-47 修复：合成出的笔记放入背包后配方失效。直接返回共享的 output 会导致结果槽、配方与背包
+        // 引用同一个 ItemStack，在背包中合并/拾取时会把该引用的数量清零。原版 assemble() 始终返回副本。
+        return this.getResultItem(registries).copy();
+    }
 
-	public TLSResearchRecipe(ItemStack output, Ingredient blade, Ingredient paper, Ingredient ink) {
-		this(ForgeRegistries.ITEMS.getKey(output.getItem()), output, blade, paper, ink);
-	}
+    @Override
+    public boolean canCraftInDimensions(int x, int y) {
+        return x * y >= 3;
+    }
 
-	@Override
-	public boolean matches(Container wrapper, Level level) {
-		return this.blade.test(wrapper.getItem(0)) && this.paper.test(wrapper.getItem(1))
-				&& this.ink.test(wrapper.getItem(2));
-	}
+    @Override
+    public @NotNull ItemStack getResultItem(HolderLookup.@NotNull Provider registries) {
+        return this.output;
+    }
 
-	@Override
-	public boolean isIncomplete() {
-		return Stream.of(this.blade, this.paper, this.ink).anyMatch(ForgeHooks::hasNoElements);
-	}
+    @Override
+    public @NotNull RecipeSerializer<?> getSerializer() {
+        return RecipeSerializerRegistry.RESEARCH_RECIPE_SERIALIZER.get();
+    }
 
-	@Override
-	public ItemStack assemble(Container wrapper, RegistryAccess access) {
-		ItemStack itemstack = this.output.copy();
-		CompoundTag compoundtag = wrapper.getItem(1).getTag();
-		if (compoundtag != null) {
-			itemstack.setTag(compoundtag.copy());
-		}
+    @Override
+    public @NotNull RecipeType<?> getType() {
+        return RecipeSerializerRegistry.RESEARCH_RECIPE_TYPE.get();
+    }
 
-		return itemstack;
-	}
+    public boolean isBladeIngredient(ItemStack stack) {
+        return this.blade.test(stack);
+    }
 
-	@Override
-	public boolean canCraftInDimensions(int x, int y) {
-		return x >= 3 && y >= 1;
-	}
+    public boolean isPaperIngredient(ItemStack stack) {
+        return this.paper.test(stack);
+    }
 
-	@Override
-	public ItemStack getResultItem(RegistryAccess access) {
-		return this.output;
-	}
+    public boolean isInkIngredient(ItemStack stack) {
+        return this.ink.test(stack);
+    }
 
-	@Override
-	public RecipeSerializer<?> getSerializer() {
-		return RecipeSerializerRegistry.RESEARCH_RECIPE_SERIALIZER.get();
-	}
+    public static class Serializer implements RecipeSerializer<TLSResearchRecipe> {
 
-	@Override
-	public RecipeType<?> getType() {
-		return RecipeSerializerRegistry.RESEARCH_RECIPE_TYPE.get();
-	}
+        public static final MapCodec<TLSResearchRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
+                ItemStack.CODEC.fieldOf("output").forGetter(r -> r.output),
+                Ingredient.CODEC.fieldOf("blade").forGetter(r -> r.blade),
+                Ingredient.CODEC.fieldOf("paper").forGetter(r -> r.paper),
+                Ingredient.CODEC.fieldOf("ink").forGetter(r -> r.ink)
+        ).apply(inst, TLSResearchRecipe::new));
 
-	public boolean isBladeIngredient(ItemStack stack) {
-		return this.blade.test(stack);
-	}
+        public static final StreamCodec<RegistryFriendlyByteBuf, TLSResearchRecipe> STREAM_CODEC =
+                ByteBufCodecs.fromCodecWithRegistries(CODEC.codec());
 
-	public boolean isPaperIngredient(ItemStack stack) {
-		return this.paper.test(stack);
-	}
+        @Override
+        public @NotNull MapCodec<TLSResearchRecipe> codec() {
+            return CODEC;
+        }
 
-	public boolean isInkIngredient(ItemStack stack) {
-		return this.ink.test(stack);
-	}
+        @Override
+        public @NotNull StreamCodec<RegistryFriendlyByteBuf, TLSResearchRecipe> streamCodec() {
+            return STREAM_CODEC;
+        }
 
-	@Override
-	public ResourceLocation getId() {
-		return this.id;
-	}
+    }
 
-	public static class Serializer implements RecipeSerializer<TLSResearchRecipe> {
-		public TLSResearchRecipe fromJson(ResourceLocation id, JsonObject json) {
-			Ingredient blade = Ingredient.fromJson(GsonHelper.getNonNull(json, "blade"));
-			Ingredient paper = Ingredient.fromJson(GsonHelper.getNonNull(json, "paper"));
-			Ingredient ink = Ingredient.fromJson(GsonHelper.getNonNull(json, "ink"));
-			ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
-			return new TLSResearchRecipe(id, output, blade, paper, ink);
-		}
+    @Override
+    public Ingredient blade() {
+        return blade;
+    }
 
-		public TLSResearchRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buffer) {
-			Ingredient blade = Ingredient.fromNetwork(buffer);
-			Ingredient paper = Ingredient.fromNetwork(buffer);
-			Ingredient ink = Ingredient.fromNetwork(buffer);
-			ItemStack output = buffer.readItem();
-			return new TLSResearchRecipe(id, output, blade, paper, ink);
-		}
+    @Override
+    public Ingredient paper() {
+        return paper;
+    }
 
-		public void toNetwork(FriendlyByteBuf buffer, TLSResearchRecipe recipe) {
-			recipe.blade.toNetwork(buffer);
-			recipe.paper.toNetwork(buffer);
-			recipe.ink.toNetwork(buffer);
-			buffer.writeItem(recipe.output);
-		}
-	}
+    @Override
+    public Ingredient ink() {
+        return ink;
+    }
 }

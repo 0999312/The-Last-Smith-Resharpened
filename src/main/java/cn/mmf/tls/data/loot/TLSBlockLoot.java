@@ -1,14 +1,13 @@
 package cn.mmf.tls.data.loot;
 
-import java.util.Set;
-
 import cn.mcmod_mmf.mmlib.data.loot.AbstartctBlockLoot;
 import cn.mmf.tls.block.BlockRegistry;
+import net.minecraft.core.HolderLookup;
 
 public class TLSBlockLoot extends AbstartctBlockLoot {
 
-	public TLSBlockLoot() {
-		super(Set.of());
+	public TLSBlockLoot(HolderLookup.Provider provider) {
+		super(provider);
 	}
 
 	@Override

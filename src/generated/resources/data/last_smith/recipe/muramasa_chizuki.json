@@ -1,0 +1,20 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "slashblade:proudsoul_sphere"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "proud_soul": 1000,
+      "refine": 10
+    }
+  },
+  "blade": "slashblade:muramasa",
+  "template": {
+    "item": "last_smith:scroll_muramasa"
+  }
+}

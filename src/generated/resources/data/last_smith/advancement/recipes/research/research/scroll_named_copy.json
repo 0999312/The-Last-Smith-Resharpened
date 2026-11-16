@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_scroll_named": {
+      "conditions": {
+        "items": [
+          {
+            "items": "last_smith:scroll_named"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "last_smith:research/scroll_named_copy"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_scroll_named"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "last_smith:research/scroll_named_copy"
+    ]
+  }
+}

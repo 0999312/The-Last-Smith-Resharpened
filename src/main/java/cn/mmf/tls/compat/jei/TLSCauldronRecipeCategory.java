@@ -37,7 +37,7 @@ public class TLSCauldronRecipeCategory implements IRecipeCategory<TLSCauldronRec
 
     public TLSCauldronRecipeCategory(IGuiHelper helper) {
         title = Component.translatable("last_smith.jei.cauldron");
-        ResourceLocation backgroundImage = new ResourceLocation(TheLastSmith.MODID, "textures/gui/jei_compat.png");
+        ResourceLocation backgroundImage = ResourceLocation.fromNamespaceAndPath(TheLastSmith.MODID, "textures/gui/jei_compat.png");
         background = helper.createDrawable(backgroundImage, 0, 0, 93, 46);
         icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
                 new ItemStack(Items.CAULDRON));
@@ -71,6 +71,7 @@ public class TLSCauldronRecipeCategory implements IRecipeCategory<TLSCauldronRec
     }
 
     @Override
+    @SuppressWarnings("removal")
     public IDrawable getBackground() {
         return background;
     }

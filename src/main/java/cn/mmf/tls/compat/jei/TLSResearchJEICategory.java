@@ -35,10 +35,10 @@ public class TLSResearchJEICategory implements IRecipeCategory<TLSResearchRecipe
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, TLSResearchRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 14, 7).setSlotName("bladeSlot").addIngredients(recipe.blade);
-        builder.addSlot(RecipeIngredientRole.INPUT, 4, 31).setSlotName("paperSlot").addIngredients(recipe.paper);
-        builder.addSlot(RecipeIngredientRole.INPUT, 24, 31).setSlotName("inkSlot").addIngredients(recipe.ink);
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 82, 19).setSlotName("outputSlot").addItemStack(recipe.output);
+        builder.addSlot(RecipeIngredientRole.INPUT, 14, 7).setSlotName("bladeSlot").addIngredients(recipe.blade());
+        builder.addSlot(RecipeIngredientRole.INPUT, 4, 31).setSlotName("paperSlot").addIngredients(recipe.paper());
+        builder.addSlot(RecipeIngredientRole.INPUT, 24, 31).setSlotName("inkSlot").addIngredients(recipe.ink());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 82, 19).setSlotName("outputSlot").addItemStack(recipe.output());
     }
 
     @Override
@@ -47,6 +47,7 @@ public class TLSResearchJEICategory implements IRecipeCategory<TLSResearchRecipe
     }
 
     @Override
+    @SuppressWarnings("removal")
     public IDrawable getBackground() {
         return background;
     }

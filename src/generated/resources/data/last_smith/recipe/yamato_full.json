@@ -1,0 +1,20 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:sakura_sphere"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "name": "slashblade:yamato",
+      "refine": 10
+    }
+  },
+  "blade": "last_smith:yamato_neo",
+  "template": {
+    "item": "last_smith:scroll_star"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "parent": "last_smith:exorcism_sakura",
+  "criteria": {
+    "has_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:evil_shura"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.shura.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "components": {
+        "minecraft:enchantments": {
+          "levels": {
+            "minecraft:looting": 1,
+            "minecraft:power": 2,
+            "minecraft:sharpness": 2
+          }
+        },
+        "minecraft:max_damage": 70,
+        "minecraft:rarity": "epic",
+        "slashblade:blade_state": {
+          "adjust": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseAttackModifier": 8.0,
+          "broken": false,
+          "carryType": "ninja",
+          "comboRoot": "slashblade:standby",
+          "defaultBewitched": true,
+          "effectColor": -9764864,
+          "effectColorInverse": false,
+          "killCount": 0,
+          "model": "last_smith:model/named/sakura/model.obj",
+          "proudSoul": 0,
+          "refine": 0,
+          "sealed": false,
+          "slashArtsKey": "slashblade:wave_edge",
+          "specialEffects": [
+            "last_smith:extra_power"
+          ],
+          "texture": "last_smith:model/named/sakura/texture_4.png",
+          "translationKey": "item.last_smith.evil_shura"
+        }
+      },
+      "count": 1,
+      "id": "slashblade:slashblade"
+    },
+    "title": {
+      "translate": "advancement.last_smith.shura.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_blade"
+    ]
+  ]
+}

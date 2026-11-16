@@ -1,6 +1,6 @@
 {
    "name" : "「魂樱之长刀」",
-   "icon" : "slashblade:slashblade{bladeState:{AttackAmplifier:0.0f,ComboRoot:\"slashblade:standby\",Damage:0,ModelName:\"last_smith:model/roukan/model.obj\",RepairCounter:0,SpecialAttackType:\"slashblade:judgement_cut\",StandbyRenderType:1b,SummonedSwordColor:-13421569,SummonedSwordColorInverse:0b,TargetEntity:0,TextureName:\"last_smith:model/named/roukan/texture.png\",_onClick:0b,adjustXYZ:[0.0d,0.0d,0.0d],baseAttackModifier:5.0f,currentCombo:\"slashblade:none\",fallDecreaseRate:0.0f,isBroken:0b,isDefaultBewitched:0b,isSealed:0b,killCount:0,lastActionTime:0L,maxDamage:45,proudSoul:0,translationKey:\"item.last_smith.roukanken\"}}",
+   "icon" : "slashblade:slashblade[slashblade:blade_state={\n   broken: 0b,\n   defaultBewitched: 1b,\n   translationKey: \"item.last_smith.roukanken\",\n   effectColor: -18491,\n   texture: \"last_smith:model/named/roukan/texture.png\",\n   sealed: 0b,\n   refine: 0,\n   comboRoot: \"slashblade:standby\",\n   effectColorInverse: 0b,\n   adjust: [0.0d, 0.0d, 0.0d],\n   proudSoul: 0,\n   killCount: 0,\n   specialEffects: [\n      \"last_smith:extra_sharpness\"\n   ],\n   slashArtsKey: \"last_smith:transmigration_slash\",\n   model: \"last_smith:model/named/roukan/model.obj\",\n   carryType: \"rninja\",\n   baseAttackModifier: 11.0f\n}]",
    "category" : "last_smith:category_5",
    "pages" : [
       {

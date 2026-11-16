@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "slashblade"
+    }
+  ],
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:sakura"
+  },
+  "base": {
+    "item": "slashblade:slashblade"
+  },
+  "blade": "slashblade:ruby",
+  "template": {
+    "item": "last_smith:scroll_katana"
+  }
+}

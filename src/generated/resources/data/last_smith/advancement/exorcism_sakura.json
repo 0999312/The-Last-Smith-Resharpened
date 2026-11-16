@@ -1,0 +1,110 @@
+{
+  "parent": "last_smith:nagasada",
+  "criteria": {
+    "ginkgo": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:exorcism_ginkgo"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sakura": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:exorcism_sakura"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "yuki": {
+      "conditions": {
+        "items": [
+          {
+            "items": "slashblade:slashblade",
+            "predicates": {
+              "slashblade:slashblade": {
+                "requestBlade": {
+                  "name": "last_smith:exorcism_yuki"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.last_smith.exorcism_sakura.desc"
+    },
+    "icon": {
+      "components": {
+        "minecraft:enchantments": {
+          "levels": {
+            "minecraft:smite": 2
+          }
+        },
+        "minecraft:max_damage": 70,
+        "minecraft:rarity": "epic",
+        "slashblade:blade_state": {
+          "adjust": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "baseAttackModifier": 5.0,
+          "broken": false,
+          "carryType": "ninja",
+          "comboRoot": "slashblade:standby",
+          "defaultBewitched": true,
+          "effectColor": -18491,
+          "effectColorInverse": false,
+          "killCount": 0,
+          "model": "last_smith:model/named/sakura/model.obj",
+          "proudSoul": 0,
+          "refine": 0,
+          "sealed": false,
+          "slashArtsKey": "last_smith:sakura_blistering_swords",
+          "specialEffects": [
+            "last_smith:smite_se"
+          ],
+          "texture": "last_smith:model/named/sakura/texture.png",
+          "translationKey": "item.last_smith.exorcism_sakura"
+        }
+      },
+      "count": 1,
+      "id": "slashblade:slashblade"
+    },
+    "title": {
+      "translate": "advancement.last_smith.exorcism_sakura.title"
+    }
+  },
+  "requirements": [
+    [
+      "sakura",
+      "ginkgo",
+      "yuki"
+    ]
+  ]
+}

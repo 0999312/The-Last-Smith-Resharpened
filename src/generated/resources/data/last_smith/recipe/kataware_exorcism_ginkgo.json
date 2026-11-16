@@ -1,0 +1,20 @@
+{
+  "type": "slashblade:slashblade_smithing",
+  "addition": {
+    "item": "last_smith:sakura_full"
+  },
+  "base": {
+    "type": "slashblade:blade",
+    "items": [
+      "slashblade:slashblade"
+    ],
+    "request": {
+      "kill": 100,
+      "name": "last_smith:exorcism_ginkgo"
+    }
+  },
+  "blade": "last_smith:evil_kataware",
+  "template": {
+    "item": "last_smith:scroll_sakura_blade"
+  }
+}

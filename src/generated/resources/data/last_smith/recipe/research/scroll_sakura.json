@@ -1,0 +1,21 @@
+{
+  "type": "last_smith:research",
+  "blade": {
+    "item": "last_smith:sakura_full"
+  },
+  "ink": [
+    {
+      "item": "minecraft:ink_sac"
+    },
+    {
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "id": "last_smith:scroll_sakura"
+  },
+  "paper": {
+    "item": "minecraft:paper"
+  }
+}

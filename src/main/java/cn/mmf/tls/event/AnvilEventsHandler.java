@@ -1,17 +1,16 @@
 package cn.mmf.tls.event;
 
 import cn.mmf.tls.item.ItemRegistry;
+import mods.flammpfeil.slashblade.capability.slashblade.BladeStateAccess;
 import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
-import mods.flammpfeil.slashblade.capability.slashblade.SlashBladeState;
-import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.item.SwordType;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.AnvilUpdateEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.AnvilUpdateEvent;
 
-@EventBusSubscriber
+@EventBusSubscriber(modid = cn.mmf.tls.TheLastSmith.MODID)
 public class AnvilEventsHandler {
     @SubscribeEvent(priority = EventPriority.NORMAL)
     public static void onAnvilUpdateEvent(AnvilUpdateEvent event) {
@@ -24,7 +23,7 @@ public class AnvilEventsHandler {
         if (base.isEmpty()) {
             return;
         }
-        if (!(base.getCapability(ItemSlashBlade.BLADESTATE).isPresent())) {
+        if (!(BladeStateAccess.of(base).isPresent())) {
             return;
         }
 
@@ -34,25 +33,23 @@ public class AnvilEventsHandler {
 
         ItemStack result = base.copy();
 
-        if (result.getCapability(ItemSlashBlade.BLADESTATE).isPresent()) {
-            ISlashBladeState state = result.getCapability(ItemSlashBlade.BLADESTATE).orElse(new SlashBladeState(result));
+        BladeStateAccess.of(result).ifPresent(state -> {
             if(state.isSealed() || SwordType.from(base).contains(SwordType.BEWITCHED))
-            	return;
+                return;
             if(state.getProudSoulCount() < 5000)
-            	return;
+                return;
             state.setDefaultBewitched(true);
             state.setProudSoulCount(state.getProudSoulCount() - 5000);
-            
+
             if(state.isBroken()) {
-            	state.setBroken(false);
-            	state.setDamage(0);
+                state.setBroken(false);
+                state.setDamage(0);
             }
             result.setDamageValue(0);
-            result.getOrCreateTag().put("bladeState", state.serializeNBT());
-       }
-        
-       event.setMaterialCost(1);
-       event.setCost(10);
-       event.setOutput(result);
+        });
+
+        event.setMaterialCost(1);
+        event.setCost(10);
+        event.setOutput(result);
     }
 }
